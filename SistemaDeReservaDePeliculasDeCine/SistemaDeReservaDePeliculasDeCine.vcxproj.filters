@@ -84,7 +84,7 @@
       <Filter>Archivos de encabezado\Code</Filter>
     </ClInclude>
     <ClInclude Include="Usuario.h">
-      <Filter>Archivos de origen\Code</Filter>
+      <Filter>Archivos de encabezado\Code</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
