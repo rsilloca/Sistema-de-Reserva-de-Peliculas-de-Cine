@@ -19,6 +19,12 @@
     <Filter Include="Archivos de origen\Adicional GUI">
       <UniqueIdentifier>{a5056ac2-1074-4fe5-85f1-a6b074b99570}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Code">
+      <UniqueIdentifier>{500b9a86-7ab0-493a-9880-844623ed597e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Code">
+      <UniqueIdentifier>{f3f355af-233a-4dba-b291-72a4e183f0a1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -35,6 +41,51 @@
     <ClInclude Include="Resource.h">
       <Filter>Archivos de encabezado\Adicional GUI</Filter>
     </ClInclude>
+    <ClInclude Include="Cine.h">
+      <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Sala.h">
+      <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Butaca.h">
+      <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
+    <ClInclude Include="CategoriaPelicula.h">
+      <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Fecha.h">
+      <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
+    <ClInclude Include="FuncionDeCine.h">
+      <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Hora.h">
+      <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Pelicula.h">
+      <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Persona.h">
+      <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Reserva.h">
+      <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Taquilla.h">
+      <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
+    <ClInclude Include="TipoSala.h">
+      <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Cliente.h">
+      <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Taquillero.h">
+      <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Usuario.h">
+      <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp">
@@ -48,6 +99,51 @@
     </ClCompile>
     <ClCompile Include="WinFormsProject.cpp">
       <Filter>Archivos de origen\Adicional GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Cine.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Sala.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Butaca.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="CategoriaPelicula.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Fecha.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="FuncionDeCine.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Hora.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Pelicula.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Persona.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Reserva.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Taquilla.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="TipoSala.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Cliente.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Taquillero.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Usuario.cpp">
+      <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
