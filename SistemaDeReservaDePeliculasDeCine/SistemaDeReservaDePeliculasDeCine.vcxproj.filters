@@ -53,9 +53,6 @@
     <ClInclude Include="CategoriaPelicula.h">
       <Filter>Archivos de encabezado\Code</Filter>
     </ClInclude>
-    <ClInclude Include="Cliente.h">
-      <Filter>Archivos de encabezado\Code</Filter>
-    </ClInclude>
     <ClInclude Include="Fecha.h">
       <Filter>Archivos de encabezado\Code</Filter>
     </ClInclude>
@@ -77,14 +74,17 @@
     <ClInclude Include="Taquilla.h">
       <Filter>Archivos de encabezado\Code</Filter>
     </ClInclude>
-    <ClInclude Include="Taquillero.h">
-      <Filter>Archivos de encabezado\Code</Filter>
-    </ClInclude>
     <ClInclude Include="TipoSala.h">
       <Filter>Archivos de encabezado\Code</Filter>
     </ClInclude>
-    <ClInclude Include="Usuario.h">
+    <ClInclude Include="Cliente.h">
       <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Taquillero.h">
+      <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Usuario.h">
+      <Filter>Archivos de origen\Code</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -112,9 +112,6 @@
     <ClCompile Include="CategoriaPelicula.cpp">
       <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
-    <ClCompile Include="Cliente.cpp">
-      <Filter>Archivos de origen\Code</Filter>
-    </ClCompile>
     <ClCompile Include="Fecha.cpp">
       <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
@@ -136,10 +133,13 @@
     <ClCompile Include="Taquilla.cpp">
       <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
-    <ClCompile Include="Taquillero.cpp">
+    <ClCompile Include="TipoSala.cpp">
       <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
-    <ClCompile Include="TipoSala.cpp">
+    <ClCompile Include="Cliente.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Taquillero.cpp">
       <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
     <ClCompile Include="Usuario.cpp">
