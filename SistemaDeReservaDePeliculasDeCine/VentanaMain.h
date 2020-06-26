@@ -61,7 +61,7 @@ namespace WinFormsProject {
 
 	private: System::Windows::Forms::Panel^ panelConfiguracion;
 
-	private: System::Windows::Forms::Label^ label4;
+
 	private: System::Windows::Forms::PictureBox^ logoInicio;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Button^ button3;
@@ -90,6 +90,11 @@ namespace WinFormsProject {
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::PictureBox^ pictureBox4;
+	private: System::Windows::Forms::Panel^ panel6;
+	private: System::Windows::Forms::Panel^ panel5;
+	private: System::Windows::Forms::Label^ label13;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::PictureBox^ pictureBox5;
 
 
 
@@ -146,7 +151,6 @@ namespace WinFormsProject {
 			this->panelNuevaReserva = (gcnew System::Windows::Forms::Panel());
 			this->panelVerReservas = (gcnew System::Windows::Forms::Panel());
 			this->panelConfiguracion = (gcnew System::Windows::Forms::Panel());
-			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -174,6 +178,11 @@ namespace WinFormsProject {
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->panel6 = (gcnew System::Windows::Forms::Panel());
 			this->panelLogin->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->iconLogin))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -190,6 +199,8 @@ namespace WinFormsProject {
 			this->panel3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			this->panel4->SuspendLayout();
+			this->panel5->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panelLogin
@@ -336,7 +347,7 @@ namespace WinFormsProject {
 			// 
 			// panelMenu
 			// 
-			this->panelMenu->BackColor = System::Drawing::Color::SteelBlue;
+			this->panelMenu->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->panelMenu->Controls->Add(this->btnSalir);
 			this->panelMenu->Controls->Add(this->btnConfiguracion);
 			this->panelMenu->Controls->Add(this->btnVerReservas);
@@ -355,7 +366,7 @@ namespace WinFormsProject {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Showcard Gothic", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(130, 439);
+			this->label1->Location = System::Drawing::Point(130, 422);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(500, 33);
 			this->label1->TabIndex = 0;
@@ -374,7 +385,7 @@ namespace WinFormsProject {
 			// logoInicio
 			// 
 			this->logoInicio->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->logoInicio->Location = System::Drawing::Point(182, 107);
+			this->logoInicio->Location = System::Drawing::Point(180, 80);
 			this->logoInicio->Name = L"logoInicio";
 			this->logoInicio->Size = System::Drawing::Size(400, 300);
 			this->logoInicio->TabIndex = 1;
@@ -401,20 +412,12 @@ namespace WinFormsProject {
 			// 
 			// panelConfiguracion
 			// 
-			this->panelConfiguracion->Controls->Add(this->label4);
+			this->panelConfiguracion->Controls->Add(this->panel6);
+			this->panelConfiguracion->Controls->Add(this->panel5);
 			this->panelConfiguracion->Location = System::Drawing::Point(200, 0);
 			this->panelConfiguracion->Name = L"panelConfiguracion";
 			this->panelConfiguracion->Size = System::Drawing::Size(760, 540);
 			this->panelConfiguracion->TabIndex = 7;
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(253, 147);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(96, 13);
-			this->label4->TabIndex = 0;
-			this->label4->Text = L"CONFIGURACION";
 			// 
 			// panel1
 			// 
@@ -441,7 +444,7 @@ namespace WinFormsProject {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(92, 20);
+			this->label2->Location = System::Drawing::Point(90, 15);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(131, 19);
 			this->label2->TabIndex = 1;
@@ -452,7 +455,7 @@ namespace WinFormsProject {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(93, 39);
+			this->label5->Location = System::Drawing::Point(90, 40);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(204, 16);
 			this->label5->TabIndex = 2;
@@ -560,7 +563,7 @@ namespace WinFormsProject {
 			// 
 			// pictureBox4
 			// 
-			this->pictureBox4->BackColor = System::Drawing::Color::MediumVioletRed;
+			this->pictureBox4->BackColor = System::Drawing::Color::GreenYellow;
 			this->pictureBox4->Location = System::Drawing::Point(0, 0);
 			this->pictureBox4->Name = L"pictureBox4";
 			this->pictureBox4->Size = System::Drawing::Size(70, 70);
@@ -572,7 +575,7 @@ namespace WinFormsProject {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(92, 20);
+			this->label3->Location = System::Drawing::Point(90, 15);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(116, 19);
 			this->label3->TabIndex = 1;
@@ -583,7 +586,7 @@ namespace WinFormsProject {
 			this->label8->AutoSize = true;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(93, 39);
+			this->label8->Location = System::Drawing::Point(90, 40);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(192, 16);
 			this->label8->TabIndex = 2;
@@ -687,6 +690,56 @@ namespace WinFormsProject {
 			this->button4->Text = L"Buscar";
 			this->button4->UseVisualStyleBackColor = true;
 			// 
+			// panel5
+			// 
+			this->panel5->BackColor = System::Drawing::SystemColors::Window;
+			this->panel5->Controls->Add(this->label13);
+			this->panel5->Controls->Add(this->label4);
+			this->panel5->Controls->Add(this->pictureBox5);
+			this->panel5->Location = System::Drawing::Point(20, 20);
+			this->panel5->Name = L"panel5";
+			this->panel5->Size = System::Drawing::Size(720, 70);
+			this->panel5->TabIndex = 0;
+			// 
+			// pictureBox5
+			// 
+			this->pictureBox5->BackColor = System::Drawing::Color::Gold;
+			this->pictureBox5->Location = System::Drawing::Point(0, 0);
+			this->pictureBox5->Name = L"pictureBox5";
+			this->pictureBox5->Size = System::Drawing::Size(70, 70);
+			this->pictureBox5->TabIndex = 0;
+			this->pictureBox5->TabStop = false;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(90, 15);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(121, 19);
+			this->label4->TabIndex = 1;
+			this->label4->Text = L"Configuración";
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label13->Location = System::Drawing::Point(90, 40);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(175, 16);
+			this->label13->TabIndex = 2;
+			this->label13->Text = L"Configura tu Cuenta Personal";
+			// 
+			// panel6
+			// 
+			this->panel6->BackColor = System::Drawing::SystemColors::Window;
+			this->panel6->Location = System::Drawing::Point(20, 100);
+			this->panel6->Name = L"panel6";
+			this->panel6->Size = System::Drawing::Size(720, 420);
+			this->panel6->TabIndex = 1;
+			// 
 			// VentanaMain
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -713,7 +766,6 @@ namespace WinFormsProject {
 			this->panelNuevaReserva->ResumeLayout(false);
 			this->panelVerReservas->ResumeLayout(false);
 			this->panelConfiguracion->ResumeLayout(false);
-			this->panelConfiguracion->PerformLayout();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
@@ -725,6 +777,9 @@ namespace WinFormsProject {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			this->panel4->ResumeLayout(false);
 			this->panel4->PerformLayout();
+			this->panel5->ResumeLayout(false);
+			this->panel5->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			this->ResumeLayout(false);
 
 		}
