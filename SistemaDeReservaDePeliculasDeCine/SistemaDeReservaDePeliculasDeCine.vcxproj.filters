@@ -153,5 +153,8 @@
     <Image Include="..\..\..\Sistema-de-Reserva-de-Peliculas-de-Cine\SistemaDeReservaDePeliculasDeCine\icon.jpg">
       <Filter>Archivos de recursos</Filter>
     </Image>
+    <Image Include="D:\EPIS\EPIS 2020\PS\Lab\ProyectoFinal\logo.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
   </ItemGroup>
 </Project>
