@@ -191,6 +191,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\Sistema-de-Reserva-de-Peliculas-de-Cine\SistemaDeReservaDePeliculasDeCine\icon.jpg" />
     <Image Include="app.ico" />
   </ItemGroup>
   <ItemGroup>
