@@ -150,5 +150,8 @@
     <Image Include="app.ico">
       <Filter>Archivos de recursos</Filter>
     </Image>
+    <Image Include="..\..\..\Sistema-de-Reserva-de-Peliculas-de-Cine\SistemaDeReservaDePeliculasDeCine\icon.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
   </ItemGroup>
 </Project>
