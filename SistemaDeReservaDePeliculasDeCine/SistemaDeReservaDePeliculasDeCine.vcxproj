@@ -193,7 +193,9 @@
   <ItemGroup>
     <Image Include="..\..\..\Sistema-de-Reserva-de-Peliculas-de-Cine\SistemaDeReservaDePeliculasDeCine\icon.jpg" />
     <Image Include="app.ico" />
+    <Image Include="D:\EPIS\EPIS 2020\PS\Lab\ProyectoFinal\icon_user.png" />
     <Image Include="D:\EPIS\EPIS 2020\PS\Lab\ProyectoFinal\logo.jpg" />
+    <Image Include="D:\EPIS\EPIS 2020\PS\Lab\ProyectoFinal\reserva_asientos.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
