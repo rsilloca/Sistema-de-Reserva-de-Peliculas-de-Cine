@@ -51,7 +51,8 @@ namespace WinFormsProject {
 	private: System::Windows::Forms::Button^ btnVerReservas;
 	private: System::Windows::Forms::Button^ btnNuevaReserva;
 	private: System::Windows::Forms::Label^ labelNomUsuario;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::PictureBox^ iconUser;
+
 	private: System::Windows::Forms::Button^ btnInicio;
 	private: System::Windows::Forms::Panel^ panelNuevaReserva;
 
@@ -64,10 +65,17 @@ namespace WinFormsProject {
 
 	private: System::Windows::Forms::PictureBox^ logoInicio;
 	private: System::Windows::Forms::Panel^ panel2;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::PictureBox^ pictureBox3;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ btnGuardarReserva;
+
+
+	private: System::Windows::Forms::PictureBox^ seleccionarButaca;
+	private: System::Windows::Forms::Button^ btnSeleccionarFuncion;
+
+	private: System::Windows::Forms::Button^ btnAgregarCliente;
+
+
+
+
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::Label^ label7;
@@ -77,7 +85,8 @@ namespace WinFormsProject {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::Panel^ panel4;
-	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ btnBuscar;
+
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker2;
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
 	private: System::Windows::Forms::TextBox^ textBox3;
@@ -138,7 +147,7 @@ namespace WinFormsProject {
 			this->textBoxPwd = (gcnew System::Windows::Forms::TextBox());
 			this->textBoxUsuario = (gcnew System::Windows::Forms::TextBox());
 			this->btnInicio = (gcnew System::Windows::Forms::Button());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->iconUser = (gcnew System::Windows::Forms::PictureBox());
 			this->labelNomUsuario = (gcnew System::Windows::Forms::Label());
 			this->btnNuevaReserva = (gcnew System::Windows::Forms::Button());
 			this->btnVerReservas = (gcnew System::Windows::Forms::Button());
@@ -149,56 +158,56 @@ namespace WinFormsProject {
 			this->panelInicio = (gcnew System::Windows::Forms::Panel());
 			this->logoInicio = (gcnew System::Windows::Forms::PictureBox());
 			this->panelNuevaReserva = (gcnew System::Windows::Forms::Panel());
-			this->panelVerReservas = (gcnew System::Windows::Forms::Panel());
-			this->panelConfiguracion = (gcnew System::Windows::Forms::Panel());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->btnGuardarReserva = (gcnew System::Windows::Forms::Button());
+			this->seleccionarButaca = (gcnew System::Windows::Forms::PictureBox());
+			this->btnSeleccionarFuncion = (gcnew System::Windows::Forms::Button());
+			this->btnAgregarCliente = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->panelVerReservas = (gcnew System::Windows::Forms::Panel());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->btnBuscar = (gcnew System::Windows::Forms::Button());
 			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->panel5 = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
+			this->panelConfiguracion = (gcnew System::Windows::Forms::Panel());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
+			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
 			this->panelLogin->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->iconLogin))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->iconUser))->BeginInit();
 			this->panelMenu->SuspendLayout();
 			this->panelInicio->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->logoInicio))->BeginInit();
 			this->panelNuevaReserva->SuspendLayout();
-			this->panelVerReservas->SuspendLayout();
-			this->panelConfiguracion->SuspendLayout();
+			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->seleccionarButaca))->BeginInit();
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
-			this->panel2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
+			this->panelVerReservas->SuspendLayout();
+			this->panel4->SuspendLayout();
 			this->panel3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
-			this->panel4->SuspendLayout();
+			this->panelConfiguracion->SuspendLayout();
 			this->panel5->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			this->SuspendLayout();
@@ -226,10 +235,11 @@ namespace WinFormsProject {
 			this->iconLogin->Size = System::Drawing::Size(250, 188);
 			this->iconLogin->TabIndex = 6;
 			this->iconLogin->TabStop = false;
+			this->iconLogin->Image = Image::FromFile(L"icon.jpg");
 			// 
 			// btnIngresar
 			// 
-			this->btnIngresar->Location = System::Drawing::Point(355, 420);
+			this->btnIngresar->Location = System::Drawing::Point(355, 422);
 			this->btnIngresar->Name = L"btnIngresar";
 			this->btnIngresar->Size = System::Drawing::Size(250, 30);
 			this->btnIngresar->TabIndex = 5;
@@ -285,14 +295,15 @@ namespace WinFormsProject {
 			this->btnInicio->UseVisualStyleBackColor = true;
 			this->btnInicio->Click += gcnew System::EventHandler(this, &VentanaMain::btnInicio_Click);
 			// 
-			// pictureBox1
+			// iconUser
 			// 
-			this->pictureBox1->BackColor = System::Drawing::SystemColors::Info;
-			this->pictureBox1->Location = System::Drawing::Point(15, 70);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(170, 170);
-			this->pictureBox1->TabIndex = 0;
-			this->pictureBox1->TabStop = false;
+			this->iconUser->BackColor = System::Drawing::SystemColors::Info;
+			this->iconUser->Location = System::Drawing::Point(15, 70);
+			this->iconUser->Name = L"iconUser";
+			this->iconUser->Size = System::Drawing::Size(170, 170);
+			this->iconUser->TabIndex = 0;
+			this->iconUser->TabStop = false;
+			this->iconUser->Image = Image::FromFile(L"icon_user.png");
 			// 
 			// labelNomUsuario
 			// 
@@ -347,13 +358,14 @@ namespace WinFormsProject {
 			// 
 			// panelMenu
 			// 
-			this->panelMenu->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->panelMenu->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->panelMenu->Controls->Add(this->btnSalir);
 			this->panelMenu->Controls->Add(this->btnConfiguracion);
 			this->panelMenu->Controls->Add(this->btnVerReservas);
 			this->panelMenu->Controls->Add(this->btnNuevaReserva);
 			this->panelMenu->Controls->Add(this->labelNomUsuario);
-			this->panelMenu->Controls->Add(this->pictureBox1);
+			this->panelMenu->Controls->Add(this->iconUser);
 			this->panelMenu->Controls->Add(this->btnInicio);
 			this->panelMenu->Location = System::Drawing::Point(0, 0);
 			this->panelMenu->Name = L"panelMenu";
@@ -390,6 +402,7 @@ namespace WinFormsProject {
 			this->logoInicio->Size = System::Drawing::Size(400, 300);
 			this->logoInicio->TabIndex = 1;
 			this->logoInicio->TabStop = false;
+			this->logoInicio->Image = Image::FromFile(L"logo.jpg");
 			// 
 			// panelNuevaReserva
 			// 
@@ -401,73 +414,13 @@ namespace WinFormsProject {
 			this->panelNuevaReserva->TabIndex = 7;
 			this->panelNuevaReserva->Visible = false;
 			// 
-			// panelVerReservas
-			// 
-			this->panelVerReservas->Controls->Add(this->panel4);
-			this->panelVerReservas->Controls->Add(this->panel3);
-			this->panelVerReservas->Location = System::Drawing::Point(200, 0);
-			this->panelVerReservas->Name = L"panelVerReservas";
-			this->panelVerReservas->Size = System::Drawing::Size(760, 540);
-			this->panelVerReservas->TabIndex = 7;
-			// 
-			// panelConfiguracion
-			// 
-			this->panelConfiguracion->Controls->Add(this->panel6);
-			this->panelConfiguracion->Controls->Add(this->panel5);
-			this->panelConfiguracion->Location = System::Drawing::Point(200, 0);
-			this->panelConfiguracion->Name = L"panelConfiguracion";
-			this->panelConfiguracion->Size = System::Drawing::Size(760, 540);
-			this->panelConfiguracion->TabIndex = 7;
-			// 
-			// panel1
-			// 
-			this->panel1->BackColor = System::Drawing::SystemColors::Window;
-			this->panel1->Controls->Add(this->label5);
-			this->panel1->Controls->Add(this->label2);
-			this->panel1->Controls->Add(this->pictureBox2);
-			this->panel1->Location = System::Drawing::Point(20, 20);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(720, 70);
-			this->panel1->TabIndex = 1;
-			// 
-			// pictureBox2
-			// 
-			this->pictureBox2->BackColor = System::Drawing::Color::Coral;
-			this->pictureBox2->Location = System::Drawing::Point(0, 0);
-			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(70, 70);
-			this->pictureBox2->TabIndex = 0;
-			this->pictureBox2->TabStop = false;
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(90, 15);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(131, 19);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"Nueva Reserva";
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(90, 40);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(204, 16);
-			this->label5->TabIndex = 2;
-			this->label5->Text = L"Crea y Guarda una Nueva Reserva";
-			// 
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::SystemColors::Window;
-			this->panel2->Controls->Add(this->button3);
-			this->panel2->Controls->Add(this->pictureBox3);
-			this->panel2->Controls->Add(this->button2);
-			this->panel2->Controls->Add(this->button1);
+			this->panel2->Controls->Add(this->btnGuardarReserva);
+			this->panel2->Controls->Add(this->seleccionarButaca);
+			this->panel2->Controls->Add(this->btnSeleccionarFuncion);
+			this->panel2->Controls->Add(this->btnAgregarCliente);
 			this->panel2->Controls->Add(this->textBox1);
 			this->panel2->Controls->Add(this->comboBox1);
 			this->panel2->Controls->Add(this->label7);
@@ -477,16 +430,60 @@ namespace WinFormsProject {
 			this->panel2->Size = System::Drawing::Size(720, 420);
 			this->panel2->TabIndex = 2;
 			// 
-			// label6
+			// btnGuardarReserva
 			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(20, 20);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(52, 16);
-			this->label6->TabIndex = 0;
-			this->label6->Text = L"Cliente:";
+			this->btnGuardarReserva->Location = System::Drawing::Point(110, 387);
+			this->btnGuardarReserva->Name = L"btnGuardarReserva";
+			this->btnGuardarReserva->Size = System::Drawing::Size(500, 23);
+			this->btnGuardarReserva->TabIndex = 7;
+			this->btnGuardarReserva->Text = L"GUARDAR RESERVA";
+			this->btnGuardarReserva->UseVisualStyleBackColor = true;
+			this->btnGuardarReserva->Click += gcnew System::EventHandler(this, &VentanaMain::btnGuardarReserva_Click);
+			// 
+			// seleccionarButaca
+			// 
+			this->seleccionarButaca->BackColor = System::Drawing::SystemColors::InactiveCaption;
+			this->seleccionarButaca->Location = System::Drawing::Point(110, 80);
+			this->seleccionarButaca->Name = L"seleccionarButaca";
+			this->seleccionarButaca->Size = System::Drawing::Size(500, 300);
+			this->seleccionarButaca->TabIndex = 6;
+			this->seleccionarButaca->TabStop = false;
+			this->seleccionarButaca->Image = Image::FromFile(L"reserva_asientos.jpg");
+			// 
+			// btnSeleccionarFuncion
+			// 
+			this->btnSeleccionarFuncion->Location = System::Drawing::Point(600, 50);
+			this->btnSeleccionarFuncion->Name = L"btnSeleccionarFuncion";
+			this->btnSeleccionarFuncion->Size = System::Drawing::Size(95, 23);
+			this->btnSeleccionarFuncion->TabIndex = 5;
+			this->btnSeleccionarFuncion->Text = L"Seleccionar";
+			this->btnSeleccionarFuncion->UseVisualStyleBackColor = true;
+			this->btnSeleccionarFuncion->Click += gcnew System::EventHandler(this, &VentanaMain::btnSeleccionarFuncion_Click);
+			// 
+			// btnAgregarCliente
+			// 
+			this->btnAgregarCliente->Location = System::Drawing::Point(600, 20);
+			this->btnAgregarCliente->Name = L"btnAgregarCliente";
+			this->btnAgregarCliente->Size = System::Drawing::Size(95, 23);
+			this->btnAgregarCliente->TabIndex = 4;
+			this->btnAgregarCliente->Text = L"Agregar";
+			this->btnAgregarCliente->UseVisualStyleBackColor = true;
+			this->btnAgregarCliente->Click += gcnew System::EventHandler(this, &VentanaMain::btnAgregarCliente_Click);
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(85, 50);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(500, 20);
+			this->textBox1->TabIndex = 3;
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Location = System::Drawing::Point(85, 20);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(500, 21);
+			this->comboBox1->TabIndex = 2;
 			// 
 			// label7
 			// 
@@ -499,103 +496,72 @@ namespace WinFormsProject {
 			this->label7->TabIndex = 1;
 			this->label7->Text = L"Función:";
 			// 
-			// comboBox1
+			// label6
 			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(85, 20);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(500, 21);
-			this->comboBox1->TabIndex = 2;
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(85, 50);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(500, 20);
-			this->textBox1->TabIndex = 3;
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(600, 20);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(95, 23);
-			this->button1->TabIndex = 4;
-			this->button1->Text = L"Agregar";
-			this->button1->UseVisualStyleBackColor = true;
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(600, 50);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(95, 23);
-			this->button2->TabIndex = 5;
-			this->button2->Text = L"Seleccionar";
-			this->button2->UseVisualStyleBackColor = true;
-			// 
-			// pictureBox3
-			// 
-			this->pictureBox3->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->pictureBox3->Location = System::Drawing::Point(110, 80);
-			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(500, 300);
-			this->pictureBox3->TabIndex = 6;
-			this->pictureBox3->TabStop = false;
-			// 
-			// button3
-			// 
-			this->button3->Location = System::Drawing::Point(110, 387);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(500, 23);
-			this->button3->TabIndex = 7;
-			this->button3->Text = L"GUARDAR RESERVA";
-			this->button3->UseVisualStyleBackColor = true;
-			// 
-			// panel3
-			// 
-			this->panel3->BackColor = System::Drawing::SystemColors::Window;
-			this->panel3->Controls->Add(this->label8);
-			this->panel3->Controls->Add(this->label3);
-			this->panel3->Controls->Add(this->pictureBox4);
-			this->panel3->Location = System::Drawing::Point(20, 20);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(720, 70);
-			this->panel3->TabIndex = 0;
-			// 
-			// pictureBox4
-			// 
-			this->pictureBox4->BackColor = System::Drawing::Color::GreenYellow;
-			this->pictureBox4->Location = System::Drawing::Point(0, 0);
-			this->pictureBox4->Name = L"pictureBox4";
-			this->pictureBox4->Size = System::Drawing::Size(70, 70);
-			this->pictureBox4->TabIndex = 0;
-			this->pictureBox4->TabStop = false;
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(90, 15);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(116, 19);
-			this->label3->TabIndex = 1;
-			this->label3->Text = L"Ver Reservas";
+			this->label6->Location = System::Drawing::Point(20, 20);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(52, 16);
+			this->label6->TabIndex = 0;
+			this->label6->Text = L"Cliente:";
 			// 
-			// label8
+			// panel1
 			// 
-			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->panel1->BackColor = System::Drawing::SystemColors::Window;
+			this->panel1->Controls->Add(this->label5);
+			this->panel1->Controls->Add(this->label2);
+			this->panel1->Controls->Add(this->pictureBox2);
+			this->panel1->Location = System::Drawing::Point(20, 20);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(720, 70);
+			this->panel1->TabIndex = 1;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(90, 40);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(192, 16);
-			this->label8->TabIndex = 2;
-			this->label8->Text = L"Vea la Lista de Reservas Activas";
+			this->label5->Location = System::Drawing::Point(90, 40);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(204, 16);
+			this->label5->TabIndex = 2;
+			this->label5->Text = L"Crea y Guarda una Nueva Reserva";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(90, 15);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(131, 19);
+			this->label2->TabIndex = 1;
+			this->label2->Text = L"Nueva Reserva";
+			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->BackColor = System::Drawing::Color::Coral;
+			this->pictureBox2->Location = System::Drawing::Point(0, 0);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(70, 70);
+			this->pictureBox2->TabIndex = 0;
+			this->pictureBox2->TabStop = false;
+			// 
+			// panelVerReservas
+			// 
+			this->panelVerReservas->Controls->Add(this->panel4);
+			this->panelVerReservas->Controls->Add(this->panel3);
+			this->panelVerReservas->Location = System::Drawing::Point(200, 0);
+			this->panelVerReservas->Name = L"panelVerReservas";
+			this->panelVerReservas->Size = System::Drawing::Size(760, 540);
+			this->panelVerReservas->TabIndex = 7;
 			// 
 			// panel4
 			// 
 			this->panel4->BackColor = System::Drawing::SystemColors::Window;
-			this->panel4->Controls->Add(this->button4);
+			this->panel4->Controls->Add(this->btnBuscar);
 			this->panel4->Controls->Add(this->dateTimePicker2);
 			this->panel4->Controls->Add(this->dateTimePicker1);
 			this->panel4->Controls->Add(this->textBox3);
@@ -609,38 +575,43 @@ namespace WinFormsProject {
 			this->panel4->Size = System::Drawing::Size(720, 420);
 			this->panel4->TabIndex = 1;
 			// 
-			// label9
+			// btnBuscar
 			// 
-			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(20, 20);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(52, 16);
-			this->label9->TabIndex = 0;
-			this->label9->Text = L"Cliente:";
+			this->btnBuscar->Location = System::Drawing::Point(440, 75);
+			this->btnBuscar->Name = L"btnBuscar";
+			this->btnBuscar->Size = System::Drawing::Size(250, 23);
+			this->btnBuscar->TabIndex = 8;
+			this->btnBuscar->Text = L"Buscar";
+			this->btnBuscar->UseVisualStyleBackColor = true;
+			this->btnBuscar->Click += gcnew System::EventHandler(this, &VentanaMain::btnBuscar_Click);
 			// 
-			// label10
+			// dateTimePicker2
 			// 
-			this->label10->AutoSize = true;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label10->Location = System::Drawing::Point(20, 50);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(48, 16);
-			this->label10->TabIndex = 1;
-			this->label10->Text = L"Desde:";
+			this->dateTimePicker2->Location = System::Drawing::Point(440, 50);
+			this->dateTimePicker2->Name = L"dateTimePicker2";
+			this->dateTimePicker2->Size = System::Drawing::Size(250, 20);
+			this->dateTimePicker2->TabIndex = 7;
 			// 
-			// label11
+			// dateTimePicker1
 			// 
-			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label11->Location = System::Drawing::Point(366, 47);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(45, 16);
-			this->label11->TabIndex = 2;
-			this->label11->Text = L"Hasta:";
+			this->dateTimePicker1->Location = System::Drawing::Point(80, 50);
+			this->dateTimePicker1->Name = L"dateTimePicker1";
+			this->dateTimePicker1->Size = System::Drawing::Size(250, 20);
+			this->dateTimePicker1->TabIndex = 6;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(440, 20);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(250, 20);
+			this->textBox3->TabIndex = 5;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(80, 20);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(250, 20);
+			this->textBox2->TabIndex = 4;
 			// 
 			// label12
 			// 
@@ -653,42 +624,97 @@ namespace WinFormsProject {
 			this->label12->TabIndex = 3;
 			this->label12->Text = L"Función:";
 			// 
-			// textBox2
+			// label11
 			// 
-			this->textBox2->Location = System::Drawing::Point(80, 20);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(250, 20);
-			this->textBox2->TabIndex = 4;
+			this->label11->AutoSize = true;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label11->Location = System::Drawing::Point(366, 47);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(45, 16);
+			this->label11->TabIndex = 2;
+			this->label11->Text = L"Hasta:";
 			// 
-			// textBox3
+			// label10
 			// 
-			this->textBox3->Location = System::Drawing::Point(440, 20);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(250, 20);
-			this->textBox3->TabIndex = 5;
+			this->label10->AutoSize = true;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label10->Location = System::Drawing::Point(20, 50);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(48, 16);
+			this->label10->TabIndex = 1;
+			this->label10->Text = L"Desde:";
 			// 
-			// dateTimePicker1
+			// label9
 			// 
-			this->dateTimePicker1->Location = System::Drawing::Point(80, 50);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(250, 20);
-			this->dateTimePicker1->TabIndex = 6;
+			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label9->Location = System::Drawing::Point(20, 20);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(52, 16);
+			this->label9->TabIndex = 0;
+			this->label9->Text = L"Cliente:";
 			// 
-			// dateTimePicker2
+			// panel3
 			// 
-			this->dateTimePicker2->Location = System::Drawing::Point(440, 50);
-			this->dateTimePicker2->Name = L"dateTimePicker2";
-			this->dateTimePicker2->Size = System::Drawing::Size(250, 20);
-			this->dateTimePicker2->TabIndex = 7;
+			this->panel3->BackColor = System::Drawing::SystemColors::Window;
+			this->panel3->Controls->Add(this->label8);
+			this->panel3->Controls->Add(this->label3);
+			this->panel3->Controls->Add(this->pictureBox4);
+			this->panel3->Location = System::Drawing::Point(20, 20);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(720, 70);
+			this->panel3->TabIndex = 0;
 			// 
-			// button4
+			// label8
 			// 
-			this->button4->Location = System::Drawing::Point(440, 75);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(250, 23);
-			this->button4->TabIndex = 8;
-			this->button4->Text = L"Buscar";
-			this->button4->UseVisualStyleBackColor = true;
+			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label8->Location = System::Drawing::Point(90, 40);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(192, 16);
+			this->label8->TabIndex = 2;
+			this->label8->Text = L"Vea la Lista de Reservas Activas";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(90, 15);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(116, 19);
+			this->label3->TabIndex = 1;
+			this->label3->Text = L"Ver Reservas";
+			// 
+			// pictureBox4
+			// 
+			this->pictureBox4->BackColor = System::Drawing::Color::GreenYellow;
+			this->pictureBox4->Location = System::Drawing::Point(0, 0);
+			this->pictureBox4->Name = L"pictureBox4";
+			this->pictureBox4->Size = System::Drawing::Size(70, 70);
+			this->pictureBox4->TabIndex = 0;
+			this->pictureBox4->TabStop = false;
+			// 
+			// panelConfiguracion
+			// 
+			this->panelConfiguracion->Controls->Add(this->panel6);
+			this->panelConfiguracion->Controls->Add(this->panel5);
+			this->panelConfiguracion->Location = System::Drawing::Point(200, 0);
+			this->panelConfiguracion->Name = L"panelConfiguracion";
+			this->panelConfiguracion->Size = System::Drawing::Size(760, 540);
+			this->panelConfiguracion->TabIndex = 7;
+			// 
+			// panel6
+			// 
+			this->panel6->BackColor = System::Drawing::SystemColors::Window;
+			this->panel6->Location = System::Drawing::Point(20, 100);
+			this->panel6->Name = L"panel6";
+			this->panel6->Size = System::Drawing::Size(720, 420);
+			this->panel6->TabIndex = 1;
 			// 
 			// panel5
 			// 
@@ -701,14 +727,16 @@ namespace WinFormsProject {
 			this->panel5->Size = System::Drawing::Size(720, 70);
 			this->panel5->TabIndex = 0;
 			// 
-			// pictureBox5
+			// label13
 			// 
-			this->pictureBox5->BackColor = System::Drawing::Color::Gold;
-			this->pictureBox5->Location = System::Drawing::Point(0, 0);
-			this->pictureBox5->Name = L"pictureBox5";
-			this->pictureBox5->Size = System::Drawing::Size(70, 70);
-			this->pictureBox5->TabIndex = 0;
-			this->pictureBox5->TabStop = false;
+			this->label13->AutoSize = true;
+			this->label13->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label13->Location = System::Drawing::Point(90, 40);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(175, 16);
+			this->label13->TabIndex = 2;
+			this->label13->Text = L"Configura tu Cuenta Personal";
 			// 
 			// label4
 			// 
@@ -721,24 +749,14 @@ namespace WinFormsProject {
 			this->label4->TabIndex = 1;
 			this->label4->Text = L"Configuración";
 			// 
-			// label13
+			// pictureBox5
 			// 
-			this->label13->AutoSize = true;
-			this->label13->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label13->Location = System::Drawing::Point(90, 40);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(175, 16);
-			this->label13->TabIndex = 2;
-			this->label13->Text = L"Configura tu Cuenta Personal";
-			// 
-			// panel6
-			// 
-			this->panel6->BackColor = System::Drawing::SystemColors::Window;
-			this->panel6->Location = System::Drawing::Point(20, 100);
-			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(720, 420);
-			this->panel6->TabIndex = 1;
+			this->pictureBox5->BackColor = System::Drawing::Color::Gold;
+			this->pictureBox5->Location = System::Drawing::Point(0, 0);
+			this->pictureBox5->Name = L"pictureBox5";
+			this->pictureBox5->Size = System::Drawing::Size(70, 70);
+			this->pictureBox5->TabIndex = 0;
+			this->pictureBox5->TabStop = false;
 			// 
 			// VentanaMain
 			// 
@@ -758,25 +776,25 @@ namespace WinFormsProject {
 			this->panelLogin->ResumeLayout(false);
 			this->panelLogin->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->iconLogin))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->iconUser))->EndInit();
 			this->panelMenu->ResumeLayout(false);
 			this->panelInicio->ResumeLayout(false);
 			this->panelInicio->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->logoInicio))->EndInit();
 			this->panelNuevaReserva->ResumeLayout(false);
-			this->panelVerReservas->ResumeLayout(false);
-			this->panelConfiguracion->ResumeLayout(false);
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->seleccionarButaca))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
-			this->panel2->ResumeLayout(false);
-			this->panel2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
+			this->panelVerReservas->ResumeLayout(false);
+			this->panel4->ResumeLayout(false);
+			this->panel4->PerformLayout();
 			this->panel3->ResumeLayout(false);
 			this->panel3->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
-			this->panel4->ResumeLayout(false);
-			this->panel4->PerformLayout();
+			this->panelConfiguracion->ResumeLayout(false);
 			this->panel5->ResumeLayout(false);
 			this->panel5->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
@@ -824,6 +842,18 @@ private: System::Void btnSalir_Click(System::Object^ sender, System::EventArgs^ 
 	panelConfiguracion->Visible = false;
 	panelInicio->Visible = false;
 	panelMenu->Visible = false;
+}
+private: System::Void btnAgregarCliente_Click(System::Object^ sender, System::EventArgs^ e) {
+	MessageBox::Show("Agregar cliente");
+}
+private: System::Void btnSeleccionarFuncion_Click(System::Object^ sender, System::EventArgs^ e) {
+	MessageBox::Show("Seleccionar función");
+}
+private: System::Void btnGuardarReserva_Click(System::Object^ sender, System::EventArgs^ e) {
+	MessageBox::Show("Reserva guardada.");
+}
+private: System::Void btnBuscar_Click(System::Object^ sender, System::EventArgs^ e) {
+MessageBox::Show("Buscando");
 }
 };
 }
