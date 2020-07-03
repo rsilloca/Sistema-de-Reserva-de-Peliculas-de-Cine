@@ -303,7 +303,7 @@ namespace WinFormsProject {
 			this->iconUser->Size = System::Drawing::Size(170, 170);
 			this->iconUser->TabIndex = 0;
 			this->iconUser->TabStop = false;
-			//this->iconUser->Image = Image::FromFile(L"icon_user.png");
+			this->iconUser->Image = Image::FromFile(L"icon_user.png");
 			// 
 			// labelNomUsuario
 			// 
@@ -402,7 +402,7 @@ namespace WinFormsProject {
 			this->logoInicio->Size = System::Drawing::Size(400, 300);
 			this->logoInicio->TabIndex = 1;
 			this->logoInicio->TabStop = false;
-			//this->logoInicio->Image = Image::FromFile(L"logo.jpg");
+			this->logoInicio->Image = Image::FromFile(L"logo.jpg");
 			// 
 			// panelNuevaReserva
 			// 
@@ -448,7 +448,7 @@ namespace WinFormsProject {
 			this->seleccionarButaca->Size = System::Drawing::Size(500, 300);
 			this->seleccionarButaca->TabIndex = 6;
 			this->seleccionarButaca->TabStop = false;
-			//this->seleccionarButaca->Image = Image::FromFile(L"reserva_asientos.jpg");
+			this->seleccionarButaca->Image = Image::FromFile(L"reserva_asientos.jpg");
 			// 
 			// btnSeleccionarFuncion
 			// 
