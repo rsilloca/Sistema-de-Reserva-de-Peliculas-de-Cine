@@ -4,11 +4,12 @@
 class Cliente :
     public Persona{
     private:
+        int numReserva;
         Reserva* reservas;
     public:
-        void setReserva(int indice);
+        void setReserva(int indice, Reserva reserva);
         Reserva* getReserva(int indice);
         Reserva* getReservas();
-        void aniadirReserva();
+        void aniadirReserva(Reserva reserva);
 };
 

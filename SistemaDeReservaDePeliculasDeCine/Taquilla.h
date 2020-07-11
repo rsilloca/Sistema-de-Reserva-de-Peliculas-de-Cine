@@ -5,6 +5,9 @@
 
 class Taquilla {
 private:
+	int numTaquillero = 0;
+	int numFuncion = 0;
+	int numCliente = 0;
 	Taquillero* taquilleros;
 	FuncionDeCine* funciones;
 	Cliente* clientes;
@@ -20,8 +23,8 @@ public:
 	FuncionDeCine* getFuncion(int indice);
 	void aniadirFuncion(FuncionDeCine funcion);
 
-	void setCliente(int indice, Cliente clientes);
+	void setCliente(int indice, Cliente cliente);
 	Cliente* getCliente();
 	Cliente* getClientes(int indice);
-	void aniadirCliente(Cliente clientes);
+	void aniadirCliente(Cliente cliente);
 };
