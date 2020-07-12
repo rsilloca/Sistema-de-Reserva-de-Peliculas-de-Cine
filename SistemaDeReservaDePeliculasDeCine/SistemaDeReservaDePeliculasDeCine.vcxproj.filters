@@ -27,18 +27,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="app.rc">
-      <Filter>Archivos de recursos</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="VentanaMain.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
-      <Filter>Archivos de encabezado\Adicional GUI</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
       <Filter>Archivos de encabezado\Adicional GUI</Filter>
     </ClInclude>
     <ClInclude Include="Cine.h">
@@ -85,6 +77,12 @@
     </ClInclude>
     <ClInclude Include="Usuario.h">
       <Filter>Archivos de encabezado\Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Constantes.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="AgregarCliente.h">
+      <Filter>Archivos de encabezado\Adicional GUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +142,12 @@
     </ClCompile>
     <ClCompile Include="Usuario.cpp">
       <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Constantes.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="AgregarCliente.cpp">
+      <Filter>Archivos de origen\Adicional GUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
