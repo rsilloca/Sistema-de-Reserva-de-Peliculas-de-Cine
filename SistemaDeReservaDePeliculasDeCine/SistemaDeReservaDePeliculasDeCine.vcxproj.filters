@@ -128,16 +128,10 @@
     <ClCompile Include="Reserva.cpp">
       <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
-    <ClCompile Include="Taquilla.cpp">
-      <Filter>Archivos de origen\Code</Filter>
-    </ClCompile>
     <ClCompile Include="TipoSala.cpp">
       <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
     <ClCompile Include="Cliente.cpp">
-      <Filter>Archivos de origen\Code</Filter>
-    </ClCompile>
-    <ClCompile Include="Taquillero.cpp">
       <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
     <ClCompile Include="Usuario.cpp">
@@ -148,6 +142,12 @@
     </ClCompile>
     <ClCompile Include="AgregarCliente.cpp">
       <Filter>Archivos de origen\Adicional GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Taquilla.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Taquillero.cpp">
+      <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
