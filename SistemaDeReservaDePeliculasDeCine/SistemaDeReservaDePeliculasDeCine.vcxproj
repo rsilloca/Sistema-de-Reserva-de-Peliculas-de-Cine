@@ -153,6 +153,7 @@
     <ClInclude Include="Persona.h" />
     <ClInclude Include="Reserva.h" />
     <ClInclude Include="Sala.h" />
+    <ClInclude Include="SeleccionarFuncion.h" />
     <ClInclude Include="Taquilla.h" />
     <ClInclude Include="Taquillero.h" />
     <ClInclude Include="TipoSala.h" />
@@ -161,6 +162,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="VerEditarReserva.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AgregarCliente.cpp" />

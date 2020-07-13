@@ -84,6 +84,12 @@
     <ClInclude Include="AgregarCliente.h">
       <Filter>Archivos de encabezado\Adicional GUI</Filter>
     </ClInclude>
+    <ClInclude Include="SeleccionarFuncion.h">
+      <Filter>Archivos de encabezado\Adicional GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="VerEditarReserva.h">
+      <Filter>Archivos de encabezado\Adicional GUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp">
