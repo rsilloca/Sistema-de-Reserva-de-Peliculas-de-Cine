@@ -84,6 +84,12 @@
     <ClInclude Include="AgregarCliente.h">
       <Filter>Archivos de encabezado\Adicional GUI</Filter>
     </ClInclude>
+    <ClInclude Include="SeleccionarFuncion.h">
+      <Filter>Archivos de encabezado\Adicional GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="VerEditarReserva.h">
+      <Filter>Archivos de encabezado\Adicional GUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp">
@@ -128,16 +134,10 @@
     <ClCompile Include="Reserva.cpp">
       <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
-    <ClCompile Include="Taquilla.cpp">
-      <Filter>Archivos de origen\Code</Filter>
-    </ClCompile>
     <ClCompile Include="TipoSala.cpp">
       <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
     <ClCompile Include="Cliente.cpp">
-      <Filter>Archivos de origen\Code</Filter>
-    </ClCompile>
-    <ClCompile Include="Taquillero.cpp">
       <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
     <ClCompile Include="Usuario.cpp">
@@ -148,6 +148,12 @@
     </ClCompile>
     <ClCompile Include="AgregarCliente.cpp">
       <Filter>Archivos de origen\Adicional GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Taquilla.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Taquillero.cpp">
+      <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
