@@ -140,13 +140,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ResourceCompile Include="app.rc" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="AgregarCliente.h" />
     <ClInclude Include="Butaca.h" />
     <ClInclude Include="CategoriaPelicula.h" />
     <ClInclude Include="Cine.h" />
     <ClInclude Include="Cliente.h" />
+    <ClInclude Include="Constantes.h" />
     <ClInclude Include="Fecha.h" />
     <ClInclude Include="FuncionDeCine.h" />
     <ClInclude Include="Hora.h" />
@@ -154,6 +153,7 @@
     <ClInclude Include="Persona.h" />
     <ClInclude Include="Reserva.h" />
     <ClInclude Include="Sala.h" />
+    <ClInclude Include="SeleccionarFuncion.h" />
     <ClInclude Include="Taquilla.h" />
     <ClInclude Include="Taquillero.h" />
     <ClInclude Include="TipoSala.h" />
@@ -162,14 +162,16 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Resource.h" />
+    <ClInclude Include="VerEditarReserva.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AgregarCliente.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Butaca.cpp" />
     <ClCompile Include="CategoriaPelicula.cpp" />
     <ClCompile Include="Cine.cpp" />
     <ClCompile Include="Cliente.cpp" />
+    <ClCompile Include="Constantes.cpp" />
     <ClCompile Include="Fecha.cpp" />
     <ClCompile Include="FuncionDeCine.cpp" />
     <ClCompile Include="Hora.cpp" />
