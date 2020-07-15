@@ -1,8 +1,17 @@
-#include "pch.h"
 #include "Sala.h"
 
-int Sala::getId(){
-	return id ;
+Sala::Sala() {
+
+}
+Sala::Sala(int Id, int capacity, TipoSala type, Butaca** armchairs) {
+	setId(Id);
+	setCapacidad(capacity);
+	setTipo(type);
+	setButacas(armchairs);
+}
+
+int Sala::getId() {
+	return id;
 }
 void Sala::setId(int Id) {
 	id = Id;
@@ -20,9 +29,9 @@ void Sala::setTipo(TipoSala type) {
 	tipo = type;
 }
 Butaca** Sala::getButacas() {
-	return butacas ;
+	return butacas;
 }
 
-void Sala::setButacas (Butaca** armchairs) {
+void Sala::setButacas(Butaca** armchairs) {
 	butacas = armchairs;
 }
