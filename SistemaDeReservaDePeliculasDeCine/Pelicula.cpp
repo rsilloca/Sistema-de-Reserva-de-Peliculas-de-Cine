@@ -25,6 +25,15 @@ void Pelicula::setDuracion(Hora duration)
 {
 	duracion = duration;
 }
+void Pelicula::setNombreImg(char* name)
+{
+	nombreImg = name;
+}
+
+void Pelicula::setId(int _id)
+{
+	id = _id;
+}
 
 bool Pelicula::getEstadoEstreno()
 {
@@ -49,4 +58,14 @@ CategoriaPelicula Pelicula::getCategoria()
 Hora Pelicula::getDuracion()
 {
 	return duracion;
+}
+
+char* Pelicula::getNombreImg()
+{
+	return nombreImg;
+}
+
+int Pelicula::getId()
+{
+	return id;
 }

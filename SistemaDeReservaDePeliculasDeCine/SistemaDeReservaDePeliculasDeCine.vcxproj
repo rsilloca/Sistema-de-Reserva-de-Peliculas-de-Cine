@@ -149,6 +149,7 @@
     <ClInclude Include="Fecha.h" />
     <ClInclude Include="FuncionDeCine.h" />
     <ClInclude Include="Hora.h" />
+    <ClInclude Include="PanelReservarAsientos.h" />
     <ClInclude Include="Pelicula.h" />
     <ClInclude Include="Persona.h" />
     <ClInclude Include="Reserva.h" />
@@ -158,11 +159,13 @@
     <ClInclude Include="Taquillero.h" />
     <ClInclude Include="TipoSala.h" />
     <ClInclude Include="Usuario.h" />
+    <ClInclude Include="Utils.h" />
     <ClInclude Include="VentanaMain.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="VerEditarReserva.h" />
+    <ClInclude Include="ViewFuncionDeCine.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AgregarCliente.cpp" />
@@ -183,8 +186,9 @@
     <ClCompile Include="Taquillero.cpp" />
     <ClCompile Include="TipoSala.cpp" />
     <ClCompile Include="Usuario.cpp" />
-    <ClCompile Include="WinFormsProject.cpp" />
+    <ClCompile Include="Utils.cpp" />
     <ClCompile Include="VentanaMain.cpp" />
+    <ClCompile Include="WinFormsProject.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -195,9 +199,24 @@
   <ItemGroup>
     <Image Include="..\..\..\Sistema-de-Reserva-de-Peliculas-de-Cine\SistemaDeReservaDePeliculasDeCine\icon.jpg" />
     <Image Include="app.ico" />
+    <Image Include="artemis_fowl.jpg" />
+    <Image Include="black_widow.jpg" />
     <Image Include="D:\EPIS\EPIS 2020\PS\Lab\ProyectoFinal\icon_user.png" />
     <Image Include="D:\EPIS\EPIS 2020\PS\Lab\ProyectoFinal\logo.jpg" />
     <Image Include="D:\EPIS\EPIS 2020\PS\Lab\ProyectoFinal\reserva_asientos.jpg" />
+    <Image Include="fast_furious_9.jpg" />
+    <Image Include="free_guy.jpg" />
+    <Image Include="historias_lamentables.jpg" />
+    <Image Include="jungle_cruise.jpg" />
+    <Image Include="la_mujer_en_la_ventana.jpg" />
+    <Image Include="los_nuevos_mutantes.jpg" />
+    <Image Include="minions.jpg" />
+    <Image Include="morbius.jpg" />
+    <Image Include="mulan.jpg" />
+    <Image Include="sin_tiempo_para_morir.jpg" />
+    <Image Include="top_gun_maverick.jpg" />
+    <Image Include="un_lugar_tranquilo.jpg" />
+    <Image Include="wonder_woman_1984.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -210,6 +229,19 @@
     <EmbeddedResource Include="VentanaMain.resx">
       <DependentUpon>VentanaMain.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cine.dat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="categorias_pelicula.txt" />
+    <Text Include="clientes.txt" />
+    <Text Include="funciones.txt" />
+    <Text Include="mainafjaaneref.txt" />
+    <Text Include="pelicula.txt" />
+    <Text Include="salas.txt" />
+    <Text Include="taquilleros.txt" />
+    <Text Include="tipo_sala.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
