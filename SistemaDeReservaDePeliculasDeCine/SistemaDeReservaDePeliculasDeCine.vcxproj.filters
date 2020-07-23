@@ -235,4 +235,30 @@
       <Filter>Archivos de recursos</Filter>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="clientes.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="categorias_pelicula.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="tipo_sala.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="taquilleros.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="salas.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="pelicula.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="mainafjaaneref.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="funciones.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+  </ItemGroup>
 </Project>
