@@ -233,6 +233,16 @@
   <ItemGroup>
     <None Include="cine.dat" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="categorias_pelicula.txt" />
+    <Text Include="clientes.txt" />
+    <Text Include="funciones.txt" />
+    <Text Include="mainafjaaneref.txt" />
+    <Text Include="pelicula.txt" />
+    <Text Include="salas.txt" />
+    <Text Include="taquilleros.txt" />
+    <Text Include="tipo_sala.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
