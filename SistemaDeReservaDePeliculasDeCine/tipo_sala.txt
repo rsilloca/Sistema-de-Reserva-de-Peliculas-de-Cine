@@ -1,0 +1,4 @@
+1,Sala XD,No existe experiencia como esta: Pantalla gigante - sonido envolvente 7.1 - proyector de ultima generacion que reproduce 35 trillones de colores.,25.5
+2,Sala D BOX,El sistema D-BOX consiste en asientos que estan programados para moverse con la pelicula y asi dar una sensacion aun mas realista de estar dentro de ella. Este sistema cuenta con niveles de intensidad que el espectador podra controlar a su gusto o desconectarlo segun su preferencia - un sistema flexible - innovador y diferente de vivir el cine.,29.9
+3,Sala Real 3D,RealD 3D es la nueva generacion de entretenimiento - con imagenes nitidas y claras para que te sientas como si estuvieras dentro de la pelicula. Real D 3D agrega una profundidad que te sitúa en medio de la acción - ya sea al emprender un viaje por tierras desconocidas o al esquivar objetos tan realistas que parecen volar en la sala.,23.5
+4,Sala 2D,Sala estandar.,20
