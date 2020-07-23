@@ -13,6 +13,8 @@ private:
 	Cliente* clientes;
 
 public:
+	Taquilla();
+	Taquilla(Pelicula*);
 	void setTaquillero(int indice, Taquillero taquillero);
 	Taquillero* getTaquilleros();
 	Taquillero* getTaquillero(int indice);
@@ -24,7 +26,12 @@ public:
 	void aniadirFuncion(FuncionDeCine funcion);
 
 	void setCliente(int indice, Cliente cliente);
-	Cliente* getCliente();
-	Cliente* getClientes(int indice);
+	Cliente* getClientes();
+	Cliente* getCliente(int indice);
 	void aniadirCliente(Cliente cliente);
+
+	int getNumFunciones();
+	int getNumTaquilleros();
+	int getNumClientes();
+
 };

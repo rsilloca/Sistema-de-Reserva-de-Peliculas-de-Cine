@@ -1,6 +1,12 @@
 #pragma once
 #include "AgregarCliente.h"
 #include "SeleccionarFuncion.h"
+#include "PanelReservarAsientos.h"
+#include "Butaca.h"
+#include "Cine.h"
+#include "Utils.h"
+#include <iostream>
+#include "Constantes.cpp"
 
 namespace WinFormsProject {
 
@@ -66,7 +72,8 @@ namespace WinFormsProject {
 
 
 	private: System::Windows::Forms::PictureBox^ logoInicio;
-	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Panel^ panelConfNuevaReserva;
+
 	private: System::Windows::Forms::Button^ btnGuardarReserva;
 
 
@@ -200,6 +207,13 @@ private: System::Windows::Forms::TextBox^ textBox12;
 private: System::Windows::Forms::TextBox^ textBox11;
 private: System::Windows::Forms::ComboBox^ comboBox3;
 private: System::Windows::Forms::Label^ label24;
+private: System::Windows::Forms::Panel^ panelPeli;
+private: System::Windows::Forms::Label^ fechaFunc;
+private: System::Windows::Forms::Label^ salaPeli;
+private: System::Windows::Forms::Label^ tituloPeli;
+private: System::Windows::Forms::PictureBox^ pictureImgPeli;
+
+
 
 
 
@@ -257,7 +271,11 @@ private: System::Windows::Forms::Label^ label24;
 			this->panelInicio = (gcnew System::Windows::Forms::Panel());
 			this->logoInicio = (gcnew System::Windows::Forms::PictureBox());
 			this->panelNuevaReserva = (gcnew System::Windows::Forms::Panel());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->panelConfNuevaReserva = (gcnew System::Windows::Forms::Panel());
 			this->btnGuardarReserva = (gcnew System::Windows::Forms::Button());
 			this->seleccionarButaca = (gcnew System::Windows::Forms::PictureBox());
 			this->btnSeleccionarFuncion = (gcnew System::Windows::Forms::Button());
@@ -266,10 +284,6 @@ private: System::Windows::Forms::Label^ label24;
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panelVerReservas = (gcnew System::Windows::Forms::Panel());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->btnBuscar = (gcnew System::Windows::Forms::Button());
@@ -328,6 +342,17 @@ private: System::Windows::Forms::Label^ label24;
 			this->label2_AC = (gcnew System::Windows::Forms::Label());
 			this->label1_AC = (gcnew System::Windows::Forms::Label());
 			this->panelVerEditarReserva = (gcnew System::Windows::Forms::Panel());
+			this->label28 = (gcnew System::Windows::Forms::Label());
+			this->label27 = (gcnew System::Windows::Forms::Label());
+			this->label26 = (gcnew System::Windows::Forms::Label());
+			this->label25 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->textBox14 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
+			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
+			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->panelSeleccionarFuncion = (gcnew System::Windows::Forms::Panel());
 			this->panelPeliculas_SF = (gcnew System::Windows::Forms::Panel());
 			this->vScrollBarPeliculas_SF = (gcnew System::Windows::Forms::VScrollBar());
@@ -344,17 +369,11 @@ private: System::Windows::Forms::Label^ label24;
 			this->label3_SF = (gcnew System::Windows::Forms::Label());
 			this->label2_FS = (gcnew System::Windows::Forms::Label());
 			this->label1_SF = (gcnew System::Windows::Forms::Label());
-			this->label24 = (gcnew System::Windows::Forms::Label());
-			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
-			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox14 = (gcnew System::Windows::Forms::TextBox());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->label25 = (gcnew System::Windows::Forms::Label());
-			this->label26 = (gcnew System::Windows::Forms::Label());
-			this->label27 = (gcnew System::Windows::Forms::Label());
-			this->label28 = (gcnew System::Windows::Forms::Label());
+			this->panelPeli = (gcnew System::Windows::Forms::Panel());
+			this->tituloPeli = (gcnew System::Windows::Forms::Label());
+			this->salaPeli = (gcnew System::Windows::Forms::Label());
+			this->fechaFunc = (gcnew System::Windows::Forms::Label());
+			this->pictureImgPeli = (gcnew System::Windows::Forms::PictureBox());
 			this->panelLogin->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->iconLogin))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->iconUser))->BeginInit();
@@ -362,10 +381,10 @@ private: System::Windows::Forms::Label^ label24;
 			this->panelInicio->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->logoInicio))->BeginInit();
 			this->panelNuevaReserva->SuspendLayout();
-			this->panel2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->seleccionarButaca))->BeginInit();
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			this->panelConfNuevaReserva->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->seleccionarButaca))->BeginInit();
 			this->panelVerReservas->SuspendLayout();
 			this->panel4->SuspendLayout();
 			this->panel3->SuspendLayout();
@@ -377,9 +396,11 @@ private: System::Windows::Forms::Label^ label24;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			this->panelAgregarCliente->SuspendLayout();
 			this->panelVerEditarReserva->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panelSeleccionarFuncion->SuspendLayout();
 			this->panelPeliculas_SF->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->panelPeli->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureImgPeli))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panelLogin
@@ -575,28 +596,70 @@ private: System::Windows::Forms::Label^ label24;
 			// panelNuevaReserva
 			// 
 			this->panelNuevaReserva->Controls->Add(this->panel1);
-			this->panelNuevaReserva->Controls->Add(this->panel2);
+			this->panelNuevaReserva->Controls->Add(this->panelConfNuevaReserva);
 			this->panelNuevaReserva->Location = System::Drawing::Point(200, 0);
 			this->panelNuevaReserva->Name = L"panelNuevaReserva";
 			this->panelNuevaReserva->Size = System::Drawing::Size(760, 540);
 			this->panelNuevaReserva->TabIndex = 7;
 			this->panelNuevaReserva->Visible = false;
 			// 
-			// panel2
+			// panel1
 			// 
-			this->panel2->BackColor = System::Drawing::SystemColors::Window;
-			this->panel2->Controls->Add(this->btnGuardarReserva);
-			this->panel2->Controls->Add(this->seleccionarButaca);
-			this->panel2->Controls->Add(this->btnSeleccionarFuncion);
-			this->panel2->Controls->Add(this->btnAgregarCliente);
-			this->panel2->Controls->Add(this->textBox1);
-			this->panel2->Controls->Add(this->comboBox1);
-			this->panel2->Controls->Add(this->label7);
-			this->panel2->Controls->Add(this->label6);
-			this->panel2->Location = System::Drawing::Point(20, 100);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(720, 420);
-			this->panel2->TabIndex = 2;
+			this->panel1->BackColor = System::Drawing::SystemColors::Window;
+			this->panel1->Controls->Add(this->label5);
+			this->panel1->Controls->Add(this->label2);
+			this->panel1->Controls->Add(this->pictureBox2);
+			this->panel1->Location = System::Drawing::Point(20, 20);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(720, 70);
+			this->panel1->TabIndex = 1;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->Location = System::Drawing::Point(90, 40);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(204, 16);
+			this->label5->TabIndex = 2;
+			this->label5->Text = L"Crea y Guarda una Nueva Reserva";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(90, 15);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(131, 19);
+			this->label2->TabIndex = 1;
+			this->label2->Text = L"Nueva Reserva";
+			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->BackColor = System::Drawing::Color::Coral;
+			this->pictureBox2->Location = System::Drawing::Point(0, 0);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(70, 70);
+			this->pictureBox2->TabIndex = 0;
+			this->pictureBox2->TabStop = false;
+			// 
+			// panelConfNuevaReserva
+			// 
+			this->panelConfNuevaReserva->BackColor = System::Drawing::SystemColors::Window;
+			this->panelConfNuevaReserva->Controls->Add(this->btnGuardarReserva);
+			this->panelConfNuevaReserva->Controls->Add(this->seleccionarButaca);
+			this->panelConfNuevaReserva->Controls->Add(this->btnSeleccionarFuncion);
+			this->panelConfNuevaReserva->Controls->Add(this->btnAgregarCliente);
+			this->panelConfNuevaReserva->Controls->Add(this->textBox1);
+			this->panelConfNuevaReserva->Controls->Add(this->comboBox1);
+			this->panelConfNuevaReserva->Controls->Add(this->label7);
+			this->panelConfNuevaReserva->Controls->Add(this->label6);
+			this->panelConfNuevaReserva->Location = System::Drawing::Point(20, 100);
+			this->panelConfNuevaReserva->Name = L"panelConfNuevaReserva";
+			this->panelConfNuevaReserva->Size = System::Drawing::Size(720, 420);
+			this->panelConfNuevaReserva->TabIndex = 2;
 			// 
 			// btnGuardarReserva
 			// 
@@ -613,7 +676,7 @@ private: System::Windows::Forms::Label^ label24;
 			this->seleccionarButaca->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->seleccionarButaca->Location = System::Drawing::Point(110, 80);
 			this->seleccionarButaca->Name = L"seleccionarButaca";
-			this->seleccionarButaca->Size = System::Drawing::Size(500, 300);
+			this->seleccionarButaca->Size = System::Drawing::Size(500, 125);
 			this->seleccionarButaca->TabIndex = 6;
 			this->seleccionarButaca->TabStop = false;
 			// 
@@ -673,48 +736,6 @@ private: System::Windows::Forms::Label^ label24;
 			this->label6->Size = System::Drawing::Size(52, 16);
 			this->label6->TabIndex = 0;
 			this->label6->Text = L"Cliente:";
-			// 
-			// panel1
-			// 
-			this->panel1->BackColor = System::Drawing::SystemColors::Window;
-			this->panel1->Controls->Add(this->label5);
-			this->panel1->Controls->Add(this->label2);
-			this->panel1->Controls->Add(this->pictureBox2);
-			this->panel1->Location = System::Drawing::Point(20, 20);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(720, 70);
-			this->panel1->TabIndex = 1;
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Tahoma", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(90, 40);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(204, 16);
-			this->label5->TabIndex = 2;
-			this->label5->Text = L"Crea y Guarda una Nueva Reserva";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Tahoma", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(90, 15);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(131, 19);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"Nueva Reserva";
-			// 
-			// pictureBox2
-			// 
-			this->pictureBox2->BackColor = System::Drawing::Color::Coral;
-			this->pictureBox2->Location = System::Drawing::Point(0, 0);
-			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(70, 70);
-			this->pictureBox2->TabIndex = 0;
-			this->pictureBox2->TabStop = false;
 			// 
 			// panelVerReservas
 			// 
@@ -1303,6 +1324,105 @@ private: System::Windows::Forms::Label^ label24;
 			this->panelVerEditarReserva->TabIndex = 3;
 			this->panelVerEditarReserva->Visible = false;
 			// 
+			// label28
+			// 
+			this->label28->AutoSize = true;
+			this->label28->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label28->Location = System::Drawing::Point(20, 124);
+			this->label28->Name = L"label28";
+			this->label28->Size = System::Drawing::Size(60, 16);
+			this->label28->TabIndex = 10;
+			this->label28->Text = L"Butacas:";
+			// 
+			// label27
+			// 
+			this->label27->AutoSize = true;
+			this->label27->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label27->Location = System::Drawing::Point(20, 100);
+			this->label27->Name = L"label27";
+			this->label27->Size = System::Drawing::Size(39, 16);
+			this->label27->TabIndex = 9;
+			this->label27->Text = L"Sala:";
+			// 
+			// label26
+			// 
+			this->label26->AutoSize = true;
+			this->label26->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label26->Location = System::Drawing::Point(22, 73);
+			this->label26->Name = L"label26";
+			this->label26->Size = System::Drawing::Size(49, 16);
+			this->label26->TabIndex = 8;
+			this->label26->Text = L"Fecha:";
+			// 
+			// label25
+			// 
+			this->label25->AutoSize = true;
+			this->label25->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label25->Location = System::Drawing::Point(22, 47);
+			this->label25->Name = L"label25";
+			this->label25->Size = System::Drawing::Size(59, 16);
+			this->label25->TabIndex = 7;
+			this->label25->Text = L"Película:";
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Location = System::Drawing::Point(380, 20);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(100, 125);
+			this->pictureBox1->TabIndex = 6;
+			this->pictureBox1->TabStop = false;
+			// 
+			// textBox14
+			// 
+			this->textBox14->Location = System::Drawing::Point(101, 125);
+			this->textBox14->Name = L"textBox14";
+			this->textBox14->Size = System::Drawing::Size(270, 20);
+			this->textBox14->TabIndex = 5;
+			// 
+			// textBox13
+			// 
+			this->textBox13->Location = System::Drawing::Point(101, 99);
+			this->textBox13->Name = L"textBox13";
+			this->textBox13->Size = System::Drawing::Size(270, 20);
+			this->textBox13->TabIndex = 4;
+			// 
+			// textBox12
+			// 
+			this->textBox12->Location = System::Drawing::Point(101, 73);
+			this->textBox12->Name = L"textBox12";
+			this->textBox12->Size = System::Drawing::Size(270, 20);
+			this->textBox12->TabIndex = 3;
+			// 
+			// textBox11
+			// 
+			this->textBox11->Location = System::Drawing::Point(101, 47);
+			this->textBox11->Name = L"textBox11";
+			this->textBox11->Size = System::Drawing::Size(270, 20);
+			this->textBox11->TabIndex = 2;
+			// 
+			// comboBox3
+			// 
+			this->comboBox3->FormattingEnabled = true;
+			this->comboBox3->Location = System::Drawing::Point(101, 20);
+			this->comboBox3->Name = L"comboBox3";
+			this->comboBox3->Size = System::Drawing::Size(270, 21);
+			this->comboBox3->TabIndex = 1;
+			// 
+			// label24
+			// 
+			this->label24->AutoSize = true;
+			this->label24->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label24->Location = System::Drawing::Point(20, 20);
+			this->label24->Name = L"label24";
+			this->label24->Size = System::Drawing::Size(52, 16);
+			this->label24->TabIndex = 0;
+			this->label24->Text = L"Cliente:";
+			// 
 			// panelSeleccionarFuncion
 			// 
 			this->panelSeleccionarFuncion->Controls->Add(this->panelPeliculas_SF);
@@ -1328,6 +1448,7 @@ private: System::Windows::Forms::Label^ label24;
 			// panelPeliculas_SF
 			// 
 			this->panelPeliculas_SF->BackColor = System::Drawing::SystemColors::Window;
+			this->panelPeliculas_SF->Controls->Add(this->panelPeli);
 			this->panelPeliculas_SF->Controls->Add(this->vScrollBarPeliculas_SF);
 			this->panelPeliculas_SF->Location = System::Drawing::Point(20, 114);
 			this->panelPeliculas_SF->Name = L"panelPeliculas_SF";
@@ -1470,104 +1591,63 @@ private: System::Windows::Forms::Label^ label24;
 			this->label1_SF->TabIndex = 0;
 			this->label1_SF->Text = L"Película:";
 			// 
-			// label24
+			// panelPeli
 			// 
-			this->label24->AutoSize = true;
-			this->label24->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->panelPeli->BackColor = System::Drawing::Color::MistyRose;
+			this->panelPeli->Controls->Add(this->pictureImgPeli);
+			this->panelPeli->Controls->Add(this->fechaFunc);
+			this->panelPeli->Controls->Add(this->salaPeli);
+			this->panelPeli->Controls->Add(this->tituloPeli);
+			this->panelPeli->Location = System::Drawing::Point(30, 20);
+			this->panelPeli->Name = L"panelPeli";
+			this->panelPeli->Size = System::Drawing::Size(100, 210);
+			this->panelPeli->TabIndex = 1;
+			// 
+			// tituloPeli
+			// 
+			this->tituloPeli->BackColor = System::Drawing::Color::MistyRose;
+			this->tituloPeli->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label24->Location = System::Drawing::Point(20, 20);
-			this->label24->Name = L"label24";
-			this->label24->Size = System::Drawing::Size(52, 16);
-			this->label24->TabIndex = 0;
-			this->label24->Text = L"Cliente:";
+			this->tituloPeli->ForeColor = System::Drawing::Color::Black;
+			this->tituloPeli->Location = System::Drawing::Point(0, 140);
+			this->tituloPeli->Name = L"tituloPeli";
+			this->tituloPeli->Size = System::Drawing::Size(100, 40);
+			this->tituloPeli->TabIndex = 1;
+			this->tituloPeli->Text = L"Harry Potter y las reliquias de la muerte";
+			this->tituloPeli->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// comboBox3
+			// salaPeli
 			// 
-			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Location = System::Drawing::Point(101, 20);
-			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(270, 21);
-			this->comboBox3->TabIndex = 1;
-			// 
-			// textBox11
-			// 
-			this->textBox11->Location = System::Drawing::Point(101, 47);
-			this->textBox11->Name = L"textBox11";
-			this->textBox11->Size = System::Drawing::Size(270, 20);
-			this->textBox11->TabIndex = 2;
-			// 
-			// textBox12
-			// 
-			this->textBox12->Location = System::Drawing::Point(101, 73);
-			this->textBox12->Name = L"textBox12";
-			this->textBox12->Size = System::Drawing::Size(270, 20);
-			this->textBox12->TabIndex = 3;
-			// 
-			// textBox13
-			// 
-			this->textBox13->Location = System::Drawing::Point(101, 99);
-			this->textBox13->Name = L"textBox13";
-			this->textBox13->Size = System::Drawing::Size(270, 20);
-			this->textBox13->TabIndex = 4;
-			// 
-			// textBox14
-			// 
-			this->textBox14->Location = System::Drawing::Point(101, 125);
-			this->textBox14->Name = L"textBox14";
-			this->textBox14->Size = System::Drawing::Size(270, 20);
-			this->textBox14->TabIndex = 5;
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Location = System::Drawing::Point(380, 20);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(100, 125);
-			this->pictureBox1->TabIndex = 6;
-			this->pictureBox1->TabStop = false;
-			// 
-			// label25
-			// 
-			this->label25->AutoSize = true;
-			this->label25->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->salaPeli->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label25->Location = System::Drawing::Point(22, 47);
-			this->label25->Name = L"label25";
-			this->label25->Size = System::Drawing::Size(59, 16);
-			this->label25->TabIndex = 7;
-			this->label25->Text = L"Película:";
+			this->salaPeli->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->salaPeli->Location = System::Drawing::Point(0, 180);
+			this->salaPeli->Name = L"salaPeli";
+			this->salaPeli->Size = System::Drawing::Size(100, 13);
+			this->salaPeli->TabIndex = 2;
+			this->salaPeli->Text = L"Sala 2D";
+			this->salaPeli->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// label26
+			// fechaFunc
 			// 
-			this->label26->AutoSize = true;
-			this->label26->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->fechaFunc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label26->Location = System::Drawing::Point(22, 73);
-			this->label26->Name = L"label26";
-			this->label26->Size = System::Drawing::Size(49, 16);
-			this->label26->TabIndex = 8;
-			this->label26->Text = L"Fecha:";
+			this->fechaFunc->Location = System::Drawing::Point(0, 194);
+			this->fechaFunc->Name = L"fechaFunc";
+			this->fechaFunc->Size = System::Drawing::Size(100, 13);
+			this->fechaFunc->TabIndex = 3;
+			this->fechaFunc->Text = L"Dom 12/12/2020";
+			this->fechaFunc->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// label27
+			// pictureImgPeli
 			// 
-			this->label27->AutoSize = true;
-			this->label27->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label27->Location = System::Drawing::Point(20, 100);
-			this->label27->Name = L"label27";
-			this->label27->Size = System::Drawing::Size(39, 16);
-			this->label27->TabIndex = 9;
-			this->label27->Text = L"Sala:";
-			// 
-			// label28
-			// 
-			this->label28->AutoSize = true;
-			this->label28->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label28->Location = System::Drawing::Point(20, 124);
-			this->label28->Name = L"label28";
-			this->label28->Size = System::Drawing::Size(60, 16);
-			this->label28->TabIndex = 10;
-			this->label28->Text = L"Butacas:";
+			this->pictureImgPeli->BackColor = System::Drawing::Color::Salmon;
+			this->pictureImgPeli->Location = System::Drawing::Point(0, 0);
+			this->pictureImgPeli->Name = L"pictureImgPeli";
+			this->pictureImgPeli->Size = System::Drawing::Size(100, 140);
+			this->pictureImgPeli->TabIndex = 4;
+			this->pictureImgPeli->TabStop = false;
 			// 
 			// VentanaMain
 			// 
@@ -1575,14 +1655,14 @@ private: System::Windows::Forms::Label^ label24;
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(960, 540);
 			this->Controls->Add(this->panelLogin);
+			this->Controls->Add(this->panelSeleccionarFuncion);
 			this->Controls->Add(this->panelMenu);
+			this->Controls->Add(this->panelAgregarCliente);
+			this->Controls->Add(this->panelVerEditarReserva);
 			this->Controls->Add(this->panelInicio);
 			this->Controls->Add(this->panelNuevaReserva);
 			this->Controls->Add(this->panelVerReservas);
 			this->Controls->Add(this->panelConfiguracion);
-			this->Controls->Add(this->panelSeleccionarFuncion);
-			this->Controls->Add(this->panelAgregarCliente);
-			this->Controls->Add(this->panelVerEditarReserva);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"VentanaMain";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -1596,12 +1676,12 @@ private: System::Windows::Forms::Label^ label24;
 			this->panelInicio->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->logoInicio))->EndInit();
 			this->panelNuevaReserva->ResumeLayout(false);
-			this->panel2->ResumeLayout(false);
-			this->panel2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->seleccionarButaca))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			this->panelConfNuevaReserva->ResumeLayout(false);
+			this->panelConfNuevaReserva->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->seleccionarButaca))->EndInit();
 			this->panelVerReservas->ResumeLayout(false);
 			this->panel4->ResumeLayout(false);
 			this->panel4->PerformLayout();
@@ -1619,15 +1699,28 @@ private: System::Windows::Forms::Label^ label24;
 			this->panelAgregarCliente->PerformLayout();
 			this->panelVerEditarReserva->ResumeLayout(false);
 			this->panelVerEditarReserva->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panelSeleccionarFuncion->ResumeLayout(false);
 			this->panelSeleccionarFuncion->PerformLayout();
 			this->panelPeliculas_SF->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->panelPeli->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureImgPeli))->EndInit();
 			this->ResumeLayout(false);
-
+			inicializarSistema();
 		}
 
 #pragma endregion
+		private: System::Void inicializarSistema() {
+			Cine* cine = Cine::getInstance();
+			//const char* pass = cine->getTaquilla().getFunciones()[5].getPelicula().getNombreImg();
+			//this->textBoxUsuario->Text = gcnew String(pass);
+			//MessageBox::Show(gcnew String(pass));
+			System::Windows::Forms::Panel^ panelReservarAsientos = gcnew PanelReservarAsientos();
+			panelReservarAsientos->Location = System::Drawing::Point(110, 225);
+			panelReservarAsientos->Size = System::Drawing::Size(500, 175);
+			this->panelConfNuevaReserva->Controls->Add(panelReservarAsientos);
+			this->inicializarImagenes();
+		}
 		private: System::Void inicializarImagenes() {
 			this->iconLogin->Image = Image::FromFile(L"icon.jpg");
 			this->logoInicio->Image = Image::FromFile(L"logo.jpg");

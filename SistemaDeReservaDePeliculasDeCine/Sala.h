@@ -20,5 +20,5 @@ public:
 	void setTipo(TipoSala type);
 	Butaca** getButacas();
 	void setButacas(Butaca** armchairs);
-
+	static Sala* getListaSala(TipoSala* listaTipoSala);
 };
