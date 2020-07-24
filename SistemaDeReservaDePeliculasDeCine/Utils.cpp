@@ -593,17 +593,17 @@ Reserva* Utils::getListaReservas()
 				i = linea.find(",");
 				id = atoi(linea.substr(0, i).c_str());
 				listaReservas[count].setId(id);
-				Constantes::showMessage(linea.c_str()); // ---> para mostrarlo ---- comentar 
+
 				linea = linea.substr(i + 1);
 				i = linea.find(",");
 				nroFuncion = atoi(linea.substr(0, i).c_str());
 				listaReservas[count].setNumeroFuncion(nroFuncion);
-				Constantes::showMessage(linea.c_str()); // ---> para mostrarlo ---- comentar 
+
 				linea = linea.substr(i + 1);
 				i = linea.find(",");
 				nroButacas = atoi(linea.substr(0, i).c_str());
 				listaReservas[count].setCantidadButacas(nroButacas);
-				Constantes::showMessage(linea.c_str()); // ---> para mostrarlo ---- comentar 
+
 				linea = linea.substr(i + 1);
 				string lineaAux;
 				int iAux = 0;
