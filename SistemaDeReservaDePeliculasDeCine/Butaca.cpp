@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "Butaca.h"
 
+
+
 bool Butaca::getOcupado() {
 	return ocupado;
 }

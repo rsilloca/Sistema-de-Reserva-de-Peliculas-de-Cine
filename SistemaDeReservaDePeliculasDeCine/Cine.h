@@ -13,6 +13,7 @@ private:
 	Sala* salas;
 	Taquilla taquilla;
 	Pelicula* peliculas;
+	Reserva* reservas;
 
 public:
 	// Patron de disenio Singleton

@@ -20,6 +20,7 @@ Cine::Cine() {
 	this->peliculas = util.getListaPelicula();
 	this->numPeliculas = Constantes::PELICULAS_MAX;
 	this->taquilla = Taquilla(this->peliculas);
+	this->reservas= util.getListaReservas();
 }
 
 Cine* Cine::getInstance() {

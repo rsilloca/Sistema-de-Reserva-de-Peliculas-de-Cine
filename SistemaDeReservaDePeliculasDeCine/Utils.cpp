@@ -568,3 +568,69 @@ FuncionDeCine* Utils::getListaFuncionDeCine(Pelicula* peliculas)
 	lectura.close();
 	return listaFunciones;
 }
+
+Reserva* Utils::getListaReservas()
+{
+	
+	Reserva* listaReservas = (Reserva*)malloc(5 * sizeof(Reserva)); // --->
+	ifstream lectura;
+	string linea;
+	string asientos;
+	lectura.open( "reservas.txt", ios::in);
+	if (!lectura.fail()) {
+		//id:1,nroFuncion:4,nroButacas:4,FilaColumnaButaca:5-5.5-6.5-7.5-8
+		int i, id, nroFuncion, nroButacas,nroAsientoF, nroAsientoC;
+		//int i, id, capacidad, idTipoSala;
+		char* butacasStr;
+		TipoSala tipoSala;
+		int count = 0;
+		while (!lectura.eof())
+		{
+			getline(lectura, linea);
+			try
+			{ 
+				Constantes::showMessage(linea.c_str()); // ---> para mostrarlo ---- comentar 
+				i = linea.find(",");
+				id = atoi(linea.substr(0, i).c_str());
+				listaReservas[count].setId(id);
+				Constantes::showMessage(linea.c_str()); // ---> para mostrarlo ---- comentar 
+				linea = linea.substr(i + 1);
+				i = linea.find(",");
+				nroFuncion = atoi(linea.substr(0, i).c_str());
+				listaReservas[count].setNumeroFuncion(nroFuncion);
+				Constantes::showMessage(linea.c_str()); // ---> para mostrarlo ---- comentar 
+				linea = linea.substr(i + 1);
+				i = linea.find(",");
+				nroButacas = atoi(linea.substr(0, i).c_str());
+				listaReservas[count].setCantidadButacas(nroButacas);
+				Constantes::showMessage(linea.c_str()); // ---> para mostrarlo ---- comentar 
+				linea = linea.substr(i + 1);
+				string lineaAux;
+				int iAux = 0;
+				Butaca* butacas = (Butaca*)malloc(nroButacas * sizeof(Butaca*));
+				for (int k = 0;k < nroButacas;k++) {
+					iAux= linea.find(".");
+					string FC = linea.substr(0, iAux).c_str();
+					int iGuion= FC.find("-");					
+					int F = atoi(FC.substr(0, iGuion).c_str());
+					int C = atoi(FC.substr(iGuion+1).c_str());
+					butacas[k].setFila(F);
+					butacas[k].setColumna(C);
+					butacas[k].setOcupado(true);
+
+					linea=linea.substr(iAux + 1);
+				}
+				listaReservas[count].setCantidadButacas(nroButacas);
+			}
+			catch (exception e)
+			{
+				string error = "Error: ";
+				error = error + e.what();
+				Constantes::showMessage(error.c_str());
+			}
+			count++;
+		}
+	}
+	lectura.close();
+	return listaReservas;
+}
