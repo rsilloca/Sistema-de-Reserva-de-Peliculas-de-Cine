@@ -25,5 +25,6 @@ public:
 	FuncionDeCine* getListaFuncionDeCine(Pelicula*);
 	Hora strToHora(const char*);
 	Fecha strToFecha(const char*);
+	Reserva* getListaReservas();
 };
 
