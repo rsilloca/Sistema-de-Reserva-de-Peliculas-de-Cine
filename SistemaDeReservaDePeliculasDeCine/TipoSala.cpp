@@ -1,9 +1,16 @@
 #include "pch.h"
 #include "TipoSala.h"
-#include <string.h>
+#include "Constantes.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
 TipoSala::TipoSala() {
 
 }
+
 TipoSala::TipoSala(int ID, char* name, char* description, double price) {
 	setId(ID);
 	setNombre(name);

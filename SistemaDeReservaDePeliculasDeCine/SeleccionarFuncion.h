@@ -1,4 +1,12 @@
 #pragma once
+#include "Cine.h"
+#include "Taquilla.h"
+#include "FuncionDeCine.h"
+#include "Pelicula.h"
+#include "ViewFuncionDeCine.h"
+#include "VentanaMain.h"
+#include "Utils.h"
+#include "Constantes.h"
 
 namespace WinFormsProject {
 
@@ -108,18 +116,11 @@ namespace WinFormsProject {
 			// panelPeliculas_SF
 			// 
 			this->panelPeliculas_SF->BackColor = System::Drawing::SystemColors::Window;
-			this->panelPeliculas_SF->Controls->Add(this->vScrollBarPeliculas_SF);
 			this->panelPeliculas_SF->Location = System::Drawing::Point(20, 114);
 			this->panelPeliculas_SF->Name = L"panelPeliculas_SF";
 			this->panelPeliculas_SF->Size = System::Drawing::Size(660, 330);
+			this->panelPeliculas_SF->AutoScroll = true;
 			this->panelPeliculas_SF->TabIndex = 13;
-			// 
-			// vScrollBarPeliculas_SF
-			// 
-			this->vScrollBarPeliculas_SF->Location = System::Drawing::Point(640, 0);
-			this->vScrollBarPeliculas_SF->Name = L"vScrollBarPeliculas_SF";
-			this->vScrollBarPeliculas_SF->Size = System::Drawing::Size(20, 330);
-			this->vScrollBarPeliculas_SF->TabIndex = 0;
 			// 
 			// btnSeleccionar_SF
 			// 
@@ -264,6 +265,33 @@ namespace WinFormsProject {
 			this->panelSeleccionarFuncion->PerformLayout();
 			this->ResumeLayout(false);
 
+			//Agregar Funciones de Cine
+			/*Cine* current = Cine::getInstance();
+			Taquilla t = current->getTaquilla();*/
+			//Cine* current = VentanaMain::cine;
+			Utils u;
+			Pelicula* peliculas = u.getListaPelicula();
+			FuncionDeCine* funciones = u.getListaFuncionDeCine(peliculas); //current->getTaquilla().getFunciones();
+			int width = 100;
+			int height = 210;
+			int nivel;
+			for (int i = 0; i < Constantes::FUNCIONES_MAX; i++)
+			{
+				nivel = i / 5;
+				System::Windows::Forms::Panel^ viewFuncion = gcnew PanelViewFuncionDeCine(&funciones[i]);
+				int x = 30 + (width * (i%5)) + (20 * (i % 5));
+				int y = 20 + (nivel * height) + (20 * nivel);
+				viewFuncion->Location = System::Drawing::Point(x, y);
+				viewFuncion->Click += gcnew System::EventHandler(this, &SeleccionarFuncion::clickFuncion);
+				this->panelPeliculas_SF->Controls->Add(viewFuncion);
+			}
 		}
+
+		void clickFuncion(System::Object^ sender, System::EventArgs^ e) {
+			PanelViewFuncionDeCine^ aux = (PanelViewFuncionDeCine^)sender;
+			aux->setBackColor(Color::Yellow);
+			MessageBox::Show(aux->getIdFuncion() + "");
+		}
+
 	};
 }

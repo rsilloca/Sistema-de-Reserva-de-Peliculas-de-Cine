@@ -1,5 +1,30 @@
 #include "pch.h"
 #include "Taquilla.h"
+#include "FuncionDeCine.h"
+#include "Constantes.h"
+#include "Cliente.h"
+#include "Taquillero.h"
+#include "Utils.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+using namespace System::Windows::Forms;
+using namespace System;
+
+Taquilla::Taquilla() {}
+
+Taquilla::Taquilla(Pelicula* peliculas)
+{
+	Utils util;
+	this->clientes = util.getListaCliente();
+	this->numCliente = Constantes::CLIENTES_MAX;
+	this->taquilleros = util.getListaTaquillero();
+	this->numTaquillero = Constantes::TAQUILLEROS_MAX;
+	this->funciones = util.getListaFuncionDeCine(peliculas);
+	this->numFuncion = Constantes::FUNCIONES_MAX;
+}
 
 /*void Taquilla::setTaquillero(int indice, Taquillero taquillero){
 	*(taquilleros + indice) = taquillero;
@@ -39,11 +64,11 @@ void Taquilla::aniadirFuncion(FuncionDeCine funcion) {
 	*(clientes + indice) = cliente;
 }*/
 
-Cliente* Taquilla::getCliente() {
+Cliente* Taquilla::getClientes() {
 	return clientes;
 }
 
-Cliente* Taquilla::getClientes(int indice) {
+Cliente* Taquilla::getCliente(int indice) {
 	return (clientes + indice);
 }
 
@@ -51,3 +76,18 @@ Cliente* Taquilla::getClientes(int indice) {
 	*(clientes + numCliente) = cliente;
 	numCliente++;
 }*/
+
+int Taquilla::getNumFunciones()
+{
+	return numFuncion;
+}
+
+int Taquilla::getNumTaquilleros()
+{
+	return numTaquillero;
+}
+
+int Taquilla::getNumClientes()
+{
+	return numCliente;
+}

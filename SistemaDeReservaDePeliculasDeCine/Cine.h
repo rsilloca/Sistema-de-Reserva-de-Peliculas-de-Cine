@@ -3,27 +3,21 @@
 #include "Taquilla.h"
 #include "Pelicula.h"
 #include <cstddef>
+#include <iostream>
 
 class Cine {
 private:
 	Cine();
-	static Cine* instance;
 	int numSalas = 0;
 	int numPeliculas = 0;
 	Sala* salas;
 	Taquilla taquilla;
 	Pelicula* peliculas;
+	//Reserva* reservas;
 
 public:
-
 	// Patron de disenio Singleton
-	static Cine* getInstance()
-	{
-		if (instance == NULL)
-			instance = new Cine();
-		else
-			return instance;
-	}
+	static Cine* getInstance();
 
 	void setSala(int indice, Sala sala);
 	Sala* getSala(int indice);
@@ -37,6 +31,9 @@ public:
 	Pelicula* getPeliculas();
 	Pelicula* getPelicula(int indice);
 	void aniadirPelicula(Pelicula pelicula);
+
+	int getNumSalas();
+	int getNumPeliculas();
 };
 
-Cine* Cine::instance = NULL;
+// Cine* Cine::instance = NULL;

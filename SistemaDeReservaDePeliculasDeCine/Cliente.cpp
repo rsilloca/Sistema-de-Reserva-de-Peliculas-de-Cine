@@ -16,3 +16,16 @@ Reserva* Cliente::getReservas(){
 void Cliente::aniadirReserva(Reserva reserva){
 	*(reservas + numReserva) = reserva;
 }
+
+void Cliente::setReservas(Reserva* _reservas) {
+	reservas = _reservas;
+}
+
+int Cliente::getNumReservas()
+{
+	return numReserva;
+}
+void Cliente::setNumReservas(int _num)
+{
+	numReserva = _num;
+}

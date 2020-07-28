@@ -11,5 +11,8 @@ class Cliente :
         Reserva* getReserva(int indice);
         Reserva* getReservas();
         void aniadirReserva(Reserva reserva);
+        void setReservas(Reserva*);
+        int getNumReservas();
+        void setNumReservas(int);
 };
 
