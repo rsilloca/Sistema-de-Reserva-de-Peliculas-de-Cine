@@ -19,12 +19,16 @@ public:
 	CategoriaPelicula* getListaCategoriaPelicula();
 	Pelicula* getListaPelicula();
 	CategoriaPelicula getCategoriaPelicula(CategoriaPelicula*, int);
-	Pelicula* getPelicula(Pelicula*, int);
+	Pelicula getPelicula(Pelicula*, int);
 	Cliente* getListaCliente();
 	Taquillero* getListaTaquillero();
 	FuncionDeCine* getListaFuncionDeCine(Pelicula*);
 	Hora strToHora(const char*);
 	Fecha strToFecha(const char*);
 	Reserva* getListaReservas();
+	FuncionDeCine getFuncionPorId(FuncionDeCine*, int);
+	int* strToListId(const char*, int, const char*);
+	Reserva* getReservasCliente(Reserva*, int*, int);
+	int getTamListStr(const char*, const char*);
 };
 

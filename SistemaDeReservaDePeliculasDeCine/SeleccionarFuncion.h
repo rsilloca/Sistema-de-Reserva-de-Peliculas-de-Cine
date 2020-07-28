@@ -4,6 +4,9 @@
 #include "FuncionDeCine.h"
 #include "Pelicula.h"
 #include "ViewFuncionDeCine.h"
+#include "VentanaMain.h"
+#include "Utils.h"
+#include "Constantes.h"
 
 namespace WinFormsProject {
 
@@ -264,12 +267,15 @@ namespace WinFormsProject {
 
 			//Agregar Funciones de Cine
 			/*Cine* current = Cine::getInstance();
-			Taquilla t = current->getTaquilla();
-			FuncionDeCine* funciones = t.getFunciones();
+			Taquilla t = current->getTaquilla();*/
+			//Cine* current = VentanaMain::cine;
+			Utils u;
+			Pelicula* peliculas = u.getListaPelicula();
+			FuncionDeCine* funciones = u.getListaFuncionDeCine(peliculas); //current->getTaquilla().getFunciones();
 			int width = 100;
 			int height = 210;
 			int nivel;
-			for (int i = 0; i < t.getNumFunciones(); i++)
+			for (int i = 0; i < Constantes::FUNCIONES_MAX; i++)
 			{
 				nivel = i / 5;
 				System::Windows::Forms::Panel^ viewFuncion = gcnew PanelViewFuncionDeCine(&funciones[i]);
@@ -278,7 +284,7 @@ namespace WinFormsProject {
 				viewFuncion->Location = System::Drawing::Point(x, y);
 				viewFuncion->Click += gcnew System::EventHandler(this, &SeleccionarFuncion::clickFuncion);
 				this->panelPeliculas_SF->Controls->Add(viewFuncion);
-			}*/
+			}
 		}
 
 		void clickFuncion(System::Object^ sender, System::EventArgs^ e) {

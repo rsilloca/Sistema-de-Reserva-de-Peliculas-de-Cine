@@ -72,6 +72,45 @@ Fecha Utils::strToFecha(const char* str)
 	}
 }
 
+int* Utils::strToListId(const char* str, int tam, const char* separador)
+{
+	try
+	{
+		string texto = (string)str;
+		string sub;
+		int index;
+		int* ids = (int*) malloc(tam * sizeof(int));
+		for (int i = 0; i < tam; i++)
+		{
+			index = texto.find(separador);
+			sub = index > 0 ? texto.substr(0, index) : texto;
+			ids[i] = atoi(sub.c_str());
+			texto = texto.substr(index + 1);
+		}
+		
+		return ids;
+	}
+	catch (exception e)
+	{
+		string error = "Error: ";
+		error = error + e.what();
+		Constantes::showMessage(error.c_str());
+	}
+}
+
+int Utils::getTamListStr(const char* str, const char* separador)
+{
+	string aux = (string)str;
+	int count = 0, index;
+	do
+	{
+		index = aux.find(separador);
+		aux = index >= 0 ? aux.substr(index + 1) : "";
+		count++;
+	} while (index >= 0);
+	return str == "" ? 0 : count;
+}
+
 void Utils::guardarCine(Cine* cine)
 {
 	ofstream escritura;
@@ -338,9 +377,9 @@ CategoriaPelicula Utils::getCategoriaPelicula(CategoriaPelicula* lista, int id)
 	}
 }
 
-Pelicula* Utils::getPelicula(Pelicula* lista, int id)
+Pelicula Utils::getPelicula(Pelicula* lista, int id)
 {
-	Pelicula* pelicula;
+	Pelicula pelicula;
 	for (int i = 0; i < Constantes::PELICULAS_MAX; i++)
 	{
 		if (lista[i].getId() == id)
@@ -349,35 +388,37 @@ Pelicula* Utils::getPelicula(Pelicula* lista, int id)
 			//char d = id;
 			//string g = f + d;
 			//Constantes::showMessage(g.c_str());
-			pelicula = &lista[i];
-			return pelicula;
+			//pelicula = &lista[i];
+			//return pelicula;
 			/*string name = lista[i].getNombre();
 			string found = "encontrado: " + name;
-			Constantes::showMessage(found.c_str());
+			Constantes::showMessage(found.c_str());*/
 			pelicula.setId(lista[i].getId());
 			pelicula.setEstadoEstreno(lista[i].getEstadoEstreno());
 			pelicula.setNombre(lista[i].getNombre());
 			pelicula.setDescripcion(lista[i].getDescripcion());
 			pelicula.setCategoria(lista[i].getCategoria());
 			pelicula.setNombreImg(lista[i].getNombreImg());
-			return pelicula;*/
+			return pelicula;
 		}
 	}
 }
 
 Cliente* Utils::getListaCliente()
 {
+	Reserva* listaReservas = getListaReservas();
 	Cliente* listaCliente = (Cliente*)malloc(Constantes::CLIENTES_MAX * sizeof(Cliente));
 	ifstream lectura;
 	string linea;
 	lectura.open(Constantes::getClienteTXT(), ios::in);
 	if (!lectura.fail()) {
-		int i, id, tipoDoc;
+		int i, id, tipoDoc, numReservas;
 		string nroDoc;
 		string nombres;
 		string apellidos;
 		string direccion;
 		string email;
+		string reservasStr;
 		int count = 0;
 		while (!lectura.eof())
 		{
@@ -414,8 +455,24 @@ Cliente* Utils::getListaCliente()
 				listaCliente[count].setDireccion(strToCharPointer(direccion.c_str()));
 
 				linea = linea.substr(i + 1);
-				email = linea;
+				i = linea.find(",");
+				email = linea.substr(0, i);
 				listaCliente[count].setEmail(strToCharPointer(email.c_str()));
+
+				linea = linea.substr(i + 1);
+				i = linea.find(",");
+				numReservas = atoi(linea.substr(0, i).c_str());
+				listaCliente[count].setNumReservas(numReservas);
+
+				if (numReservas > 0)
+				{
+					linea = linea.substr(i + 1);
+					reservasStr = linea;
+					int* ids = strToListId(reservasStr.c_str(), numReservas, "-");
+					Reserva* reservasCliente = getReservasCliente(listaReservas, ids, numReservas);
+					listaCliente[count].setReservas(reservasCliente);
+				}
+				
 			}
 			catch (exception e)
 			{
@@ -428,6 +485,16 @@ Cliente* Utils::getListaCliente()
 	}
 	lectura.close();
 	return listaCliente;
+}
+
+Reserva* Utils::getReservasCliente(Reserva* reservas, int* ids, int tam)
+{
+	Reserva* reservasCliente = (Reserva*)malloc(tam * sizeof(Reserva));
+	for (int i = 0; i < tam; i++)
+	{
+		reservasCliente[i] = reservas[ids[i]];
+	}
+	return reservasCliente;
 }
 
 Taquillero* Utils::getListaTaquillero()
@@ -516,7 +583,7 @@ FuncionDeCine* Utils::getListaFuncionDeCine(Pelicula* peliculas)
 	if (!lectura.fail()) {
 		int i, id, idPelicula, idSala;
 		string fechaStr;
-		Pelicula* p;
+		//Pelicula* p;
 		Fecha f;
 		int count = 0;
 		while (!lectura.eof())
@@ -532,16 +599,16 @@ FuncionDeCine* Utils::getListaFuncionDeCine(Pelicula* peliculas)
 				linea = linea.substr(i + 1);
 				i = linea.find(",");
 				idPelicula = atoi(linea.substr(0, i).c_str());
-				p = getPelicula(peliculas, idPelicula);
-				Pelicula peli;
+				Pelicula p = getPelicula(peliculas, idPelicula);
+				/*Pelicula peli;
 				peli.setId(p->getId());
 				peli.setEstadoEstreno(p->getEstadoEstreno());
 				peli.setNombre(p->getNombre());
 				peli.setDescripcion(p->getDescripcion());
 				peli.setNombreImg(p->getNombreImg());
 				peli.setDuracion(p->getDuracion());
-				peli.setCategoria(p->getCategoria());
-				listaFunciones[count].setPelicula(peli);
+				peli.setCategoria(p->getCategoria());*/
+				listaFunciones[count].setPelicula(p);
 				//Constantes::showMessage(linea.substr(0, i).c_str());
 
 				linea = linea.substr(i + 1);
@@ -569,14 +636,25 @@ FuncionDeCine* Utils::getListaFuncionDeCine(Pelicula* peliculas)
 	return listaFunciones;
 }
 
+FuncionDeCine Utils::getFuncionPorId(FuncionDeCine* funciones, int id)
+{
+	for (int i = 0; i < Constantes::FUNCIONES_MAX; i++)
+	{
+		if (funciones[i].getId() == id)
+		{
+			return funciones[i];
+		}
+	}
+}
+
 Reserva* Utils::getListaReservas()
 {
 	
-	Reserva* listaReservas = (Reserva*)malloc(5 * sizeof(Reserva)); // --->
+	Reserva* listaReservas = (Reserva*)malloc(Constantes::RESERVAS_MAX * sizeof(Reserva)); // --->
 	ifstream lectura;
 	string linea;
 	string asientos;
-	lectura.open( "reservas.txt", ios::in);
+	lectura.open(Constantes::getReservaTXT(), ios::in);
 	if (!lectura.fail()) {
 		//id:1,nroFuncion:4,nroButacas:4,FilaColumnaButaca:5-5.5-6.5-7.5-8
 		int i, id, nroFuncion, nroButacas,nroAsientoF, nroAsientoC;
@@ -589,7 +667,7 @@ Reserva* Utils::getListaReservas()
 			getline(lectura, linea);
 			try
 			{ 
-				Constantes::showMessage(linea.c_str()); // ---> para mostrarlo ---- comentar 
+				//Constantes::showMessage(linea.c_str()); // ---> para mostrarlo ---- comentar 
 				i = linea.find(",");
 				id = atoi(linea.substr(0, i).c_str());
 				listaReservas[count].setId(id);
@@ -620,7 +698,7 @@ Reserva* Utils::getListaReservas()
 
 					linea=linea.substr(iAux + 1);
 				}
-				listaReservas[count].setCantidadButacas(nroButacas);
+				listaReservas[count].setButacasReservadas(butacas);
 			}
 			catch (exception e)
 			{

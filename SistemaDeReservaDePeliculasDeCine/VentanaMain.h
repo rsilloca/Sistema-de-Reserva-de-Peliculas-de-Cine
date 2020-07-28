@@ -7,6 +7,7 @@
 #include "Utils.h"
 #include <iostream>
 #include "Constantes.cpp"
+#include <string>
 
 namespace WinFormsProject {
 
@@ -86,7 +87,8 @@ namespace WinFormsProject {
 
 
 	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::ComboBox^ comboBoxClientes;
+
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Panel^ panel1;
@@ -212,6 +214,21 @@ private: System::Windows::Forms::Label^ fechaFunc;
 private: System::Windows::Forms::Label^ salaPeli;
 private: System::Windows::Forms::Label^ tituloPeli;
 private: System::Windows::Forms::PictureBox^ pictureImgPeli;
+private: System::Windows::Forms::DataGridView^ dataGridReservas;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ nroReserva;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ clienteReserva;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ funcionReserva;
+private: System::Windows::Forms::DataGridViewButtonColumn^ accionVer;
+private: System::Windows::Forms::DataGridViewButtonColumn^ accionEditar;
+private: System::Windows::Forms::DataGridViewButtonColumn^ accionEliminar;
+
+
+
+
+
+
+
+
 
 
 
@@ -281,11 +298,12 @@ private: System::Windows::Forms::PictureBox^ pictureImgPeli;
 			this->btnSeleccionarFuncion = (gcnew System::Windows::Forms::Button());
 			this->btnAgregarCliente = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBoxClientes = (gcnew System::Windows::Forms::ComboBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->panelVerReservas = (gcnew System::Windows::Forms::Panel());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->dataGridReservas = (gcnew System::Windows::Forms::DataGridView());
 			this->btnBuscar = (gcnew System::Windows::Forms::Button());
 			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
@@ -355,6 +373,11 @@ private: System::Windows::Forms::PictureBox^ pictureImgPeli;
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->panelSeleccionarFuncion = (gcnew System::Windows::Forms::Panel());
 			this->panelPeliculas_SF = (gcnew System::Windows::Forms::Panel());
+			this->panelPeli = (gcnew System::Windows::Forms::Panel());
+			this->pictureImgPeli = (gcnew System::Windows::Forms::PictureBox());
+			this->fechaFunc = (gcnew System::Windows::Forms::Label());
+			this->salaPeli = (gcnew System::Windows::Forms::Label());
+			this->tituloPeli = (gcnew System::Windows::Forms::Label());
 			this->vScrollBarPeliculas_SF = (gcnew System::Windows::Forms::VScrollBar());
 			this->btnSeleccionar_SF = (gcnew System::Windows::Forms::Button());
 			this->btnCancelar_SF = (gcnew System::Windows::Forms::Button());
@@ -369,11 +392,12 @@ private: System::Windows::Forms::PictureBox^ pictureImgPeli;
 			this->label3_SF = (gcnew System::Windows::Forms::Label());
 			this->label2_FS = (gcnew System::Windows::Forms::Label());
 			this->label1_SF = (gcnew System::Windows::Forms::Label());
-			this->panelPeli = (gcnew System::Windows::Forms::Panel());
-			this->tituloPeli = (gcnew System::Windows::Forms::Label());
-			this->salaPeli = (gcnew System::Windows::Forms::Label());
-			this->fechaFunc = (gcnew System::Windows::Forms::Label());
-			this->pictureImgPeli = (gcnew System::Windows::Forms::PictureBox());
+			this->nroReserva = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->clienteReserva = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->funcionReserva = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->accionVer = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
+			this->accionEditar = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
+			this->accionEliminar = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
 			this->panelLogin->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->iconLogin))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->iconUser))->BeginInit();
@@ -387,6 +411,7 @@ private: System::Windows::Forms::PictureBox^ pictureImgPeli;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->seleccionarButaca))->BeginInit();
 			this->panelVerReservas->SuspendLayout();
 			this->panel4->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridReservas))->BeginInit();
 			this->panel3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			this->panelConfiguracion->SuspendLayout();
@@ -653,7 +678,7 @@ private: System::Windows::Forms::PictureBox^ pictureImgPeli;
 			this->panelConfNuevaReserva->Controls->Add(this->btnSeleccionarFuncion);
 			this->panelConfNuevaReserva->Controls->Add(this->btnAgregarCliente);
 			this->panelConfNuevaReserva->Controls->Add(this->textBox1);
-			this->panelConfNuevaReserva->Controls->Add(this->comboBox1);
+			this->panelConfNuevaReserva->Controls->Add(this->comboBoxClientes);
 			this->panelConfNuevaReserva->Controls->Add(this->label7);
 			this->panelConfNuevaReserva->Controls->Add(this->label6);
 			this->panelConfNuevaReserva->Location = System::Drawing::Point(20, 100);
@@ -707,13 +732,13 @@ private: System::Windows::Forms::PictureBox^ pictureImgPeli;
 			this->textBox1->Size = System::Drawing::Size(500, 20);
 			this->textBox1->TabIndex = 3;
 			// 
-			// comboBox1
+			// comboBoxClientes
 			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(85, 20);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(500, 21);
-			this->comboBox1->TabIndex = 2;
+			this->comboBoxClientes->FormattingEnabled = true;
+			this->comboBoxClientes->Location = System::Drawing::Point(85, 20);
+			this->comboBoxClientes->Name = L"comboBoxClientes";
+			this->comboBoxClientes->Size = System::Drawing::Size(500, 21);
+			this->comboBoxClientes->TabIndex = 2;
 			// 
 			// label7
 			// 
@@ -749,6 +774,7 @@ private: System::Windows::Forms::PictureBox^ pictureImgPeli;
 			// panel4
 			// 
 			this->panel4->BackColor = System::Drawing::SystemColors::Window;
+			this->panel4->Controls->Add(this->dataGridReservas);
 			this->panel4->Controls->Add(this->btnBuscar);
 			this->panel4->Controls->Add(this->dateTimePicker2);
 			this->panel4->Controls->Add(this->dateTimePicker1);
@@ -762,6 +788,20 @@ private: System::Windows::Forms::PictureBox^ pictureImgPeli;
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(720, 420);
 			this->panel4->TabIndex = 1;
+			// 
+			// dataGridReservas
+			// 
+			this->dataGridReservas->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->dataGridReservas->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridReservas->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {
+				this->nroReserva,
+					this->clienteReserva, this->funcionReserva, this->accionVer, this->accionEditar, this->accionEliminar
+			});
+			this->dataGridReservas->Location = System::Drawing::Point(25, 110);
+			this->dataGridReservas->Name = L"dataGridReservas";
+			this->dataGridReservas->RowHeadersWidth = 5;
+			this->dataGridReservas->Size = System::Drawing::Size(665, 285);
+			this->dataGridReservas->TabIndex = 9;
 			// 
 			// btnBuscar
 			// 
@@ -1455,6 +1495,64 @@ private: System::Windows::Forms::PictureBox^ pictureImgPeli;
 			this->panelPeliculas_SF->Size = System::Drawing::Size(660, 330);
 			this->panelPeliculas_SF->TabIndex = 13;
 			// 
+			// panelPeli
+			// 
+			this->panelPeli->BackColor = System::Drawing::Color::MistyRose;
+			this->panelPeli->Controls->Add(this->pictureImgPeli);
+			this->panelPeli->Controls->Add(this->fechaFunc);
+			this->panelPeli->Controls->Add(this->salaPeli);
+			this->panelPeli->Controls->Add(this->tituloPeli);
+			this->panelPeli->Location = System::Drawing::Point(30, 20);
+			this->panelPeli->Name = L"panelPeli";
+			this->panelPeli->Size = System::Drawing::Size(100, 210);
+			this->panelPeli->TabIndex = 1;
+			// 
+			// pictureImgPeli
+			// 
+			this->pictureImgPeli->BackColor = System::Drawing::Color::Salmon;
+			this->pictureImgPeli->Location = System::Drawing::Point(0, 0);
+			this->pictureImgPeli->Name = L"pictureImgPeli";
+			this->pictureImgPeli->Size = System::Drawing::Size(100, 140);
+			this->pictureImgPeli->TabIndex = 4;
+			this->pictureImgPeli->TabStop = false;
+			// 
+			// fechaFunc
+			// 
+			this->fechaFunc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->fechaFunc->Location = System::Drawing::Point(0, 194);
+			this->fechaFunc->Name = L"fechaFunc";
+			this->fechaFunc->Size = System::Drawing::Size(100, 13);
+			this->fechaFunc->TabIndex = 3;
+			this->fechaFunc->Text = L"Dom 12/12/2020";
+			this->fechaFunc->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// salaPeli
+			// 
+			this->salaPeli->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->salaPeli->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->salaPeli->Location = System::Drawing::Point(0, 180);
+			this->salaPeli->Name = L"salaPeli";
+			this->salaPeli->Size = System::Drawing::Size(100, 13);
+			this->salaPeli->TabIndex = 2;
+			this->salaPeli->Text = L"Sala 2D";
+			this->salaPeli->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// tituloPeli
+			// 
+			this->tituloPeli->BackColor = System::Drawing::Color::MistyRose;
+			this->tituloPeli->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->tituloPeli->ForeColor = System::Drawing::Color::Black;
+			this->tituloPeli->Location = System::Drawing::Point(0, 140);
+			this->tituloPeli->Name = L"tituloPeli";
+			this->tituloPeli->Size = System::Drawing::Size(100, 40);
+			this->tituloPeli->TabIndex = 1;
+			this->tituloPeli->Text = L"Harry Potter y las reliquias de la muerte";
+			this->tituloPeli->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// vScrollBarPeliculas_SF
 			// 
 			this->vScrollBarPeliculas_SF->Location = System::Drawing::Point(640, 0);
@@ -1591,63 +1689,48 @@ private: System::Windows::Forms::PictureBox^ pictureImgPeli;
 			this->label1_SF->TabIndex = 0;
 			this->label1_SF->Text = L"Película:";
 			// 
-			// panelPeli
+			// nroReserva
 			// 
-			this->panelPeli->BackColor = System::Drawing::Color::MistyRose;
-			this->panelPeli->Controls->Add(this->pictureImgPeli);
-			this->panelPeli->Controls->Add(this->fechaFunc);
-			this->panelPeli->Controls->Add(this->salaPeli);
-			this->panelPeli->Controls->Add(this->tituloPeli);
-			this->panelPeli->Location = System::Drawing::Point(30, 20);
-			this->panelPeli->Name = L"panelPeli";
-			this->panelPeli->Size = System::Drawing::Size(100, 210);
-			this->panelPeli->TabIndex = 1;
+			this->nroReserva->HeaderText = L"Nro";
+			this->nroReserva->Name = L"nroReserva";
+			this->nroReserva->ReadOnly = true;
+			this->nroReserva->Width = 165;
 			// 
-			// tituloPeli
+			// clienteReserva
 			// 
-			this->tituloPeli->BackColor = System::Drawing::Color::MistyRose;
-			this->tituloPeli->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->tituloPeli->ForeColor = System::Drawing::Color::Black;
-			this->tituloPeli->Location = System::Drawing::Point(0, 140);
-			this->tituloPeli->Name = L"tituloPeli";
-			this->tituloPeli->Size = System::Drawing::Size(100, 40);
-			this->tituloPeli->TabIndex = 1;
-			this->tituloPeli->Text = L"Harry Potter y las reliquias de la muerte";
-			this->tituloPeli->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->clienteReserva->HeaderText = L"Cliente";
+			this->clienteReserva->Name = L"clienteReserva";
+			this->clienteReserva->ReadOnly = true;
+			this->clienteReserva->Width = 165;
 			// 
-			// salaPeli
+			// funcionReserva
 			// 
-			this->salaPeli->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->salaPeli->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->salaPeli->Location = System::Drawing::Point(0, 180);
-			this->salaPeli->Name = L"salaPeli";
-			this->salaPeli->Size = System::Drawing::Size(100, 13);
-			this->salaPeli->TabIndex = 2;
-			this->salaPeli->Text = L"Sala 2D";
-			this->salaPeli->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->funcionReserva->HeaderText = L"Función";
+			this->funcionReserva->Name = L"funcionReserva";
+			this->funcionReserva->ReadOnly = true;
+			this->funcionReserva->Width = 165;
 			// 
-			// fechaFunc
+			// accionVer
 			// 
-			this->fechaFunc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->fechaFunc->Location = System::Drawing::Point(0, 194);
-			this->fechaFunc->Name = L"fechaFunc";
-			this->fechaFunc->Size = System::Drawing::Size(100, 13);
-			this->fechaFunc->TabIndex = 3;
-			this->fechaFunc->Text = L"Dom 12/12/2020";
-			this->fechaFunc->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->accionVer->HeaderText = L"Ver";
+			this->accionVer->Name = L"accionVer";
+			this->accionVer->ReadOnly = true;
+			this->accionVer->Resizable = System::Windows::Forms::DataGridViewTriState::True;
+			this->accionVer->Width = 55;
 			// 
-			// pictureImgPeli
+			// accionEditar
 			// 
-			this->pictureImgPeli->BackColor = System::Drawing::Color::Salmon;
-			this->pictureImgPeli->Location = System::Drawing::Point(0, 0);
-			this->pictureImgPeli->Name = L"pictureImgPeli";
-			this->pictureImgPeli->Size = System::Drawing::Size(100, 140);
-			this->pictureImgPeli->TabIndex = 4;
-			this->pictureImgPeli->TabStop = false;
+			this->accionEditar->HeaderText = L"Editar";
+			this->accionEditar->Name = L"accionEditar";
+			this->accionEditar->ReadOnly = true;
+			this->accionEditar->Width = 55;
+			// 
+			// accionEliminar
+			// 
+			this->accionEliminar->HeaderText = L"Eliminar";
+			this->accionEliminar->Name = L"accionEliminar";
+			this->accionEliminar->ReadOnly = true;
+			this->accionEliminar->Width = 55;
 			// 
 			// VentanaMain
 			// 
@@ -1655,11 +1738,11 @@ private: System::Windows::Forms::PictureBox^ pictureImgPeli;
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(960, 540);
 			this->Controls->Add(this->panelLogin);
-			this->Controls->Add(this->panelSeleccionarFuncion);
 			this->Controls->Add(this->panelMenu);
-			this->Controls->Add(this->panelAgregarCliente);
 			this->Controls->Add(this->panelVerEditarReserva);
 			this->Controls->Add(this->panelInicio);
+			this->Controls->Add(this->panelSeleccionarFuncion);
+			this->Controls->Add(this->panelAgregarCliente);
 			this->Controls->Add(this->panelNuevaReserva);
 			this->Controls->Add(this->panelVerReservas);
 			this->Controls->Add(this->panelConfiguracion);
@@ -1685,6 +1768,7 @@ private: System::Windows::Forms::PictureBox^ pictureImgPeli;
 			this->panelVerReservas->ResumeLayout(false);
 			this->panel4->ResumeLayout(false);
 			this->panel4->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridReservas))->EndInit();
 			this->panel3->ResumeLayout(false);
 			this->panel3->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
@@ -1710,16 +1794,63 @@ private: System::Windows::Forms::PictureBox^ pictureImgPeli;
 		}
 
 #pragma endregion
+
+		public: static Cine* cine;
+
 		private: System::Void inicializarSistema() {
-			Cine* cine = Cine::getInstance();
-			//const char* pass = cine->getTaquilla().getFunciones()[5].getPelicula().getNombreImg();
-			//this->textBoxUsuario->Text = gcnew String(pass);
-			//MessageBox::Show(gcnew String(pass));
+			
+			this->cine = Cine::getInstance();
+			
 			System::Windows::Forms::Panel^ panelReservarAsientos = gcnew PanelReservarAsientos();
 			panelReservarAsientos->Location = System::Drawing::Point(110, 225);
 			panelReservarAsientos->Size = System::Drawing::Size(500, 175);
 			this->panelConfNuevaReserva->Controls->Add(panelReservarAsientos);
 			this->inicializarImagenes();
+			this->inicializarComboBoxClientes();
+			this->inicializarTablaReservas();
+		}
+		private: System::Void inicializarTablaReservas() {
+			Utils u;
+			Cliente* clientes = this->cine->getTaquilla().getClientes();
+			FuncionDeCine* funciones = this->cine->getTaquilla().getFunciones();
+			for (int i = 0; i < Constantes::CLIENTES_MAX; i++)
+			{
+				Reserva* clienteReservas = clientes[i].getReservas();
+				FuncionDeCine funcionAux;
+				for (int j = 0; j < clientes[i].getNumReservas(); j++)
+				{
+					DataGridViewRow^ row = gcnew DataGridViewRow();
+					DataGridViewCell^ celId = gcnew DataGridViewTextBoxCell();
+					celId->Value = gcnew String(clienteReservas[j].getId().ToString());
+					row->Cells->Add(celId);
+					DataGridViewCell^ celCliente = gcnew DataGridViewTextBoxCell();
+					celCliente->Value = gcnew String(clientes[i].getNombre()) + " " + gcnew String(clientes[i].getApellido());
+					row->Cells->Add(celCliente);
+					DataGridViewCell^ celPelicula = gcnew DataGridViewTextBoxCell();
+					funcionAux = u.getFuncionPorId(funciones, clienteReservas[j].getNumeroFuncion());
+					celPelicula->Value = gcnew String(funcionAux.getPelicula().getNombre());
+					row->Cells->Add(celPelicula);
+					DataGridViewCell^ celVer = gcnew DataGridViewButtonCell();
+					celVer->Value = "Ver";
+					row->Cells->Add(celVer);
+					DataGridViewCell^ celEditar = gcnew DataGridViewButtonCell();
+					celEditar->Value = "Editar";
+					row->Cells->Add(celEditar);
+					DataGridViewCell^ celEliminar = gcnew DataGridViewButtonCell();
+					celEliminar->Value = "Eliminar";
+					row->Cells->Add(celEliminar);
+					this->dataGridReservas->Rows->Add(row);
+				}
+			}
+		}
+		private: System::Void inicializarComboBoxClientes() {
+			Cliente* clientes = this->cine->getTaquilla().getClientes();
+			for (int i = 0; i < Constantes::CLIENTES_MAX; i++)
+			{
+				this->comboBoxClientes->Items->Add(gcnew String(clientes[i].getNombre()) + " "
+					+ gcnew String(clientes[i].getApellido()) + " - "
+					+ gcnew String(clientes[i].getNumeroDocumento()));
+			}
 		}
 		private: System::Void inicializarImagenes() {
 			this->iconLogin->Image = Image::FromFile(L"icon.jpg");
@@ -1729,12 +1860,31 @@ private: System::Windows::Forms::PictureBox^ pictureImgPeli;
 			this->imgPerfil->Image = Image::FromFile(L"icon_user.png");
 		}
 	private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArgs^ e) {
-		panelLogin->Visible = false;
-		panelNuevaReserva->Visible = false;
-		panelVerReservas->Visible = false;
-		panelConfiguracion->Visible = false;
-		panelInicio->Visible = true;
-		panelMenu->Visible = true;
+		Taquillero* t = this->cine->getTaquilla().getTaquilleros();
+		bool found = false;
+		for (int i = 0; i < Constantes::TAQUILLEROS_MAX; i++)
+		{
+			if (this->textBoxUsuario->Text == gcnew String(t[i].getUsuario()) &&
+				this->textBoxPwd->Text == gcnew String(t[i].getPassword()))
+			{
+				found = true;
+				break;
+			}
+		}
+		if (found) {
+			this->textBoxUsuario->Text = "";
+			this->textBoxPwd->Text = "";
+			this->panelLogin->Visible = false;
+			this->panelNuevaReserva->Visible = false;
+			this->panelVerReservas->Visible = false;
+			this->panelConfiguracion->Visible = false;
+			this->panelInicio->Visible = true;
+			this->panelMenu->Visible = true;
+		}
+		else
+		{
+			Constantes::showMessage("Usuario no autorizado.");
+		}
 	}
 	private: System::Void btnInicio_Click(System::Object^ sender, System::EventArgs^ e) {
 		panelInicio->Visible = true;
