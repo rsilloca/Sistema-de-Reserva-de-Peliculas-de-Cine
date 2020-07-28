@@ -25,6 +25,7 @@ public:
 	static const int CLIENTES_MAX = 4;
 	static const int TIPO_SALA_MAX = 4;
 	static const int CATEGORIA_PELICULA_MAX = 7;
+	static const int RESERVAS_MAX = 5;
 
 	// Nombres archivos y cantidades constantes
 	static char* getTipoSalaTXT()
@@ -54,6 +55,10 @@ public:
 	static char* getFuncionDeCineTXT()
 	{
 		return "funciones.txt";
+	}
+	static char* getReservaTXT()
+	{
+		return "reservas.txt";
 	}
 
 	// Mensajes de Informacion

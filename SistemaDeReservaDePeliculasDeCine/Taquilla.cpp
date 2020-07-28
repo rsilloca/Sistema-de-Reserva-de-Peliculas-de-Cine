@@ -48,38 +48,6 @@ void Taquilla::setFuncion(int indice, FuncionDeCine funcion) {
 }
 
 FuncionDeCine* Taquilla::getFunciones() {
-	ifstream lectura;
-	string linea;
-	lectura.open("funciones_de_cine.txt", ios::in);
-	int i = 0;
-	funciones = (FuncionDeCine*)malloc(Constantes::FUNCIONES_MAX * sizeof(FuncionDeCine));
-	if (!lectura.fail()) {
-		getline(lectura, linea);
-		while (!lectura.eof())
-		{
-			getline(lectura, linea);
-			int m = linea.find(",");
-			Pelicula p;
-			//p.setNombre(linea.substr(0, m).c_str());
-			//p.setNombreImg(linea.substr(m + 1).c_str());
-			// MessageBox::Show(gcnew String(linea.c_str()) + "  " + m + "  " + gcnew String(linea.substr(0, m).c_str()) + " " + gcnew String(linea.substr(m + 1).c_str()));
-			Fecha f;
-			f.setDia(12);
-			f.setMes(12);
-			f.setAnio(2020);
-			Hora h;
-			h.setHoras(19);
-			h.setMinutos(30);
-			f.setHora(h);
-			funciones[i].setId(i);
-			funciones[i].setNumeroSala(3);
-			funciones[i].setFecha(f);
-			funciones[i].setPelicula(p);
-			numFuncion++;
-			i++;
-		}
-	}
-	lectura.close();
 	return funciones;
 }
 

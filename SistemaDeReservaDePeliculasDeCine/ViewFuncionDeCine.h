@@ -103,8 +103,8 @@ namespace WinFormsProject {
 			this->pictureImgPelicula->Name = L"pictureImgPelicula";
 			this->pictureImgPelicula->Size = System::Drawing::Size(100, 140);
 			this->pictureImgPelicula->TabStop = false;
-			MessageBox::Show(gcnew String("" + this->funcion->getPelicula().getId()));
-			//this->pictureImgPelicula->Image = Image::FromFile(gcnew String(this->funcion->getPelicula().getNombreImg()));
+			// MessageBox::Show(gcnew String("" + this->funcion->getPelicula().getId()));
+			this->pictureImgPelicula->Image = Image::FromFile(gcnew String(this->funcion->getPelicula().getNombreImg()));
 		}
 
 	public: void setBackColor(System::Drawing::Color color) {
