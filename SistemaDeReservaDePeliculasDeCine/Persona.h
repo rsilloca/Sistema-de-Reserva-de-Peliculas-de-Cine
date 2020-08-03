@@ -12,6 +12,7 @@ private:
 	char* direccion;
 	char* email;
 
+public:
 	void setId(int cod);
 	int getId();
 

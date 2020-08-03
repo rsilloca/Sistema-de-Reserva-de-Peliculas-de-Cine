@@ -27,18 +27,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="app.rc">
-      <Filter>Archivos de recursos</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="VentanaMain.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
-      <Filter>Archivos de encabezado\Adicional GUI</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
       <Filter>Archivos de encabezado\Adicional GUI</Filter>
     </ClInclude>
     <ClInclude Include="Cine.h">
@@ -86,15 +78,33 @@
     <ClInclude Include="Usuario.h">
       <Filter>Archivos de encabezado\Code</Filter>
     </ClInclude>
+    <ClInclude Include="Constantes.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="AgregarCliente.h">
+      <Filter>Archivos de encabezado\Adicional GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="SeleccionarFuncion.h">
+      <Filter>Archivos de encabezado\Adicional GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="VerEditarReserva.h">
+      <Filter>Archivos de encabezado\Adicional GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="PanelReservarAsientos.h">
+      <Filter>Archivos de encabezado\Adicional GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewFuncionDeCine.h">
+      <Filter>Archivos de encabezado\Adicional GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp">
       <Filter>Archivos de origen\Adicional GUI</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
-      <Filter>Archivos de origen\Adicional GUI</Filter>
-    </ClCompile>
-    <ClCompile Include="VentanaMain.cpp">
       <Filter>Archivos de origen\Adicional GUI</Filter>
     </ClCompile>
     <ClCompile Include="WinFormsProject.cpp">
@@ -130,20 +140,32 @@
     <ClCompile Include="Reserva.cpp">
       <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
-    <ClCompile Include="Taquilla.cpp">
-      <Filter>Archivos de origen\Code</Filter>
-    </ClCompile>
     <ClCompile Include="TipoSala.cpp">
       <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
     <ClCompile Include="Cliente.cpp">
       <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
+    <ClCompile Include="Usuario.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Constantes.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="AgregarCliente.cpp">
+      <Filter>Archivos de origen\Adicional GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Taquilla.cpp">
+      <Filter>Archivos de origen\Code</Filter>
+    </ClCompile>
     <ClCompile Include="Taquillero.cpp">
       <Filter>Archivos de origen\Code</Filter>
     </ClCompile>
-    <ClCompile Include="Usuario.cpp">
-      <Filter>Archivos de origen\Code</Filter>
+    <ClCompile Include="VentanaMain.cpp">
+      <Filter>Archivos de origen\Adicional GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -162,5 +184,81 @@
     <Image Include="D:\EPIS\EPIS 2020\PS\Lab\ProyectoFinal\icon_user.png">
       <Filter>Archivos de recursos</Filter>
     </Image>
+    <Image Include="black_widow.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="un_lugar_tranquilo.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="los_nuevos_mutantes.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="mulan.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="sin_tiempo_para_morir.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="historias_lamentables.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="la_mujer_en_la_ventana.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="artemis_fowl.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="fast_furious_9.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="wonder_woman_1984.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="free_guy.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="morbius.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="minions.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="top_gun_maverick.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="jungle_cruise.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cine.dat">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="clientes.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="categorias_pelicula.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="tipo_sala.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="taquilleros.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="salas.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="pelicula.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="mainafjaaneref.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="funciones.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
   </ItemGroup>
 </Project>

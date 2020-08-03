@@ -8,16 +8,17 @@ private:
 	int id;
 	int capacidad;
 	TipoSala tipo;
-	Butaca **butacas;
+	Butaca** butacas;
 public:
-	int getId ();
+	Sala();
+	Sala(int Id, int capacity, TipoSala type, Butaca** armchairs);
+	int getId();
 	void setId(int Id);
 	int getCapacidad();
 	void setCapacidad(int capacity);
 	TipoSala getTipo();
 	void setTipo(TipoSala type);
 	Butaca** getButacas();
-	void setButacas(Butaca ** armchairs);
-
+	void setButacas(Butaca** armchairs);
+	static Sala* getListaSala(TipoSala* listaTipoSala);
 };
-

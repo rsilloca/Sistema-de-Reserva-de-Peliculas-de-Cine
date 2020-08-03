@@ -1,6 +1,22 @@
 #include "pch.h"
 #include "TipoSala.h"
-#include <string.h>
+#include "Constantes.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+TipoSala::TipoSala() {
+
+}
+
+TipoSala::TipoSala(int ID, char* name, char* description, double price) {
+	setId(ID);
+	setNombre(name);
+	setDescripcion(description);
+	setPrecioEntradaPersona(price);
+}
 
 int TipoSala::getId() {
 	return id;
@@ -12,13 +28,19 @@ void TipoSala::setId(int Id) {
 char* TipoSala::getNombre() {
 	return nombre;
 }
-void TipoSala::setNombre(char name []) {
-	strcpy(nombre, name);
+void TipoSala::setNombre(char* name) {
+	nombre = name;
 }
 
 char* TipoSala::getDescripcion() {
 	return descripcion;
 }
-void TipoSala::setDescripcion(char description[]) {
-	strcpy(descripcion, description);
+void TipoSala::setDescripcion(char* description) {
+	descripcion = description;
+}
+double  TipoSala::getPrecioEntradaPersona() {
+	return precioEntradaPersona;
+}
+void TipoSala::setPrecioEntradaPersona(double price) {
+	precioEntradaPersona = price;
 }
