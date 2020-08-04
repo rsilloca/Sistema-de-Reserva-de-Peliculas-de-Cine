@@ -1,5 +1,6 @@
 #pragma once
 #include "Constantes.h"
+#include "Butaca.h"
 
 namespace WinFormsProject {
 
@@ -30,7 +31,10 @@ namespace WinFormsProject {
 
 	private:
 		System::ComponentModel::Container^ components;
-
+		//Arreglo de Butacas
+		Butaca* butacasSelccionadas = new Butaca;
+		//Cantidad de Butacas llenas
+		int numButacasLlenas;
 		void InitializeComponent(void)
 		{
 			this->SuspendLayout();
@@ -59,6 +63,37 @@ namespace WinFormsProject {
 			System::Windows::Forms::Button^ aux = (System::Windows::Forms::Button^)sender;
 			if (aux->BackColor == System::Drawing::Color::White) {
 				aux->BackColor = System::Drawing::Color::Yellow;
+				String^ numButaca = aux->Text;
+				char* letra = new char;
+				char* numero = new char;
+				letra[0] = numButaca[0];
+				numero[0] = numButaca[1];
+				int numl, numn;
+				if (letra[0].Equals("A"))
+					numl = 1;
+				else if (letra[0].Equals("B"))
+					numl = 2;
+				else if (letra[0].Equals("C"))
+					numl = 3;
+				else if (letra[0].Equals("D"))
+					numl = 4;
+				else if (letra[0].Equals("E"))
+					numl = 5;
+				numn = numero[0] - '0';
+				Butaca butacaAux;
+				butacaAux.setOcupado("true");
+				butacaAux.setColumna(numl);
+				butacaAux.setFila(numn);
+				*(butacasSelccionadas + numButacasLlenas) = butacaAux;
+				//Imprimir mensaje de la butaca seleccionada (No funciona bien)
+				/*Butaca but = *(butacasSelccionadas + numButacasLlenas);
+				String^ mensaje = "Numero de columna seleccionada: " + but.getColumna() + "Numero de fila seleccionada: " + but.getFila() + "Estado del aciento: " + but.getOcupado();
+				char* men = new char;
+				for (int i = 0; i < mensaje->Length; i++) {
+					*(men + i) = mensaje[i];
+				}
+				Constantes::showMessage(men);*/
+				numButacasLlenas++;
 			}
 			else {
 				aux->BackColor = System::Drawing::Color::White;
@@ -66,5 +101,4 @@ namespace WinFormsProject {
 		}
 
 	};
-
 }
