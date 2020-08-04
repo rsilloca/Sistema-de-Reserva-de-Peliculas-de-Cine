@@ -6,6 +6,7 @@
 #include "CategoriaPelicula.h"
 #include "Cliente.h"
 #include "Hora.h"
+#include <string>
 
 class Utils
 {
@@ -21,11 +22,16 @@ public:
 	CategoriaPelicula getCategoriaPelicula(CategoriaPelicula*, int);
 	Pelicula getPelicula(Pelicula*, int);
 	Cliente* getListaCliente();
+	void agregarCliente(int tipoDoc, std::string nroDoc, std::string nombres, std::string apellidos, std::string direccion, std::string email, int numReservas);
+	int cantidadClientes();
 	Taquillero* getListaTaquillero();
 	FuncionDeCine* getListaFuncionDeCine(Pelicula*);
 	Hora strToHora(const char*);
 	Fecha strToFecha(const char*);
 	Reserva* getListaReservas();
+
+	std::string getTextBox(System::String^ aux);
+	
 	FuncionDeCine getFuncionPorId(FuncionDeCine*, int);
 	int* strToListId(const char*, int, const char*);
 	Reserva* getReservasCliente(Reserva*, int*, int);
