@@ -97,6 +97,41 @@ namespace WinFormsProject {
 			}
 			else {
 				aux->BackColor = System::Drawing::Color::White;
+				String^ numButaca = aux->Text;
+				char* letra = new char;
+				char* numero = new char;
+				letra[0] = numButaca[0];
+				numero[0] = numButaca[1];
+				int numl, numn;
+				if (letra[0].Equals("A"))
+					numl = 1;
+				else if (letra[0].Equals("B"))
+					numl = 2;
+				else if (letra[0].Equals("C"))
+					numl = 3;
+				else if (letra[0].Equals("D"))
+					numl = 4;
+				else if (letra[0].Equals("E"))
+					numl = 5;
+				numn = numero[0] - '0';
+				Butaca butacaAux;
+				butacaAux.setOcupado("true");
+				butacaAux.setColumna(numl);
+				butacaAux.setFila(numn);
+				
+				for (int i = 0; i < numButacasLlenas; i++) {
+					Butaca but = *(butacasSelccionadas + i);
+					if (but.getColumna() == butacaAux.getColumna()) {
+						if (but.getFila() == butacaAux.getFila()) {
+							if (but.getOcupado() == butacaAux.getOcupado()) {
+								while (i < numButacasLlenas) {
+									*(butacasSelccionadas + i) = *(butacasSelccionadas + i + 1);
+								}
+							}
+						}
+					}
+				}
+				numButacasLlenas--;
 			}
 		}
 
