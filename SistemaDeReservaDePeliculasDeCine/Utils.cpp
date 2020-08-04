@@ -486,6 +486,42 @@ Cliente* Utils::getListaCliente()
 	lectura.close();
 	return listaCliente;
 }
+void Utils::agregarCliente(int tipoDoc, string nroDoc, string nombres, string apellidos, string direccion, string email, int numReservas = 0)
+{
+	char temp[200];
+	int cont = 1;
+	FILE* f;
+	f = fopen(Constantes::getClienteTXT(), "r");
+	if (f == NULL) {
+		printf("No se ha podido abrir el fichero.\n");
+		exit(1);
+	}
+	while (!feof(f)) {
+		fgets(temp, 200, f);
+		cont++;
+	}
+	fstream escritura;
+	escritura.open(Constantes::getClienteTXT(), ios::app);
+	escritura << "\n";
+	escritura << cont << "," << tipoDoc << "," << nroDoc << "," << nombres << "," << apellidos << "," << direccion << "," << email << "," << numReservas;
+	escritura.close();
+	printf("registro exitoso");
+}
+int Utils::cantidadClientes() {
+	char temp[200];
+	int cont = 0;
+	FILE* f;
+	f = fopen(Constantes::getClienteTXT(), "r");
+	if (f == NULL) {
+		printf("No se ha podido abrir el fichero.\n");
+		exit(1);
+	}
+	while (!feof(f)) {
+		fgets(temp, 200, f);
+		cont++;
+	}
+	return cont;
+}
 
 Reserva* Utils::getReservasCliente(Reserva* reservas, int* ids, int tam)
 {
@@ -711,4 +747,14 @@ Reserva* Utils::getListaReservas()
 	}
 	lectura.close();
 	return listaReservas;
+}
+
+std::string Utils::getTextBox(System::String^ aux) {
+	string dato;
+	for (int i = 0; i < aux->Length; i++)
+	{
+		dato += (char)aux[i];
+	}
+	cout << dato;
+	return dato;
 }

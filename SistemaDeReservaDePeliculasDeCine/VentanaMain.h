@@ -1214,6 +1214,7 @@ private: System::Windows::Forms::DataGridViewButtonColumn^ accionEliminar;
 			this->btnGuardar_AgregarCliente->TabIndex = 13;
 			this->btnGuardar_AgregarCliente->Text = L"GUARDAR";
 			this->btnGuardar_AgregarCliente->UseVisualStyleBackColor = true;
+			//this->btnGuardar_AgregarCliente->Click += gcnew System::EventHandler(this, &VentanaMain::btnGuardar_AgregarCliente_Click);
 			// 
 			// btnCancelar_AgregarCliente
 			// 
@@ -1845,7 +1846,9 @@ private: System::Windows::Forms::DataGridViewButtonColumn^ accionEliminar;
 		}
 		private: System::Void inicializarComboBoxClientes() {
 			Cliente* clientes = this->cine->getTaquilla().getClientes();
-			for (int i = 0; i < Constantes::CLIENTES_MAX; i++)
+			Utils util;
+			int can = util.cantidadClientes();
+			for (int i = 0; i < can; i++)
 			{
 				this->comboBoxClientes->Items->Add(gcnew String(clientes[i].getNombre()) + " "
 					+ gcnew String(clientes[i].getApellido()) + " - "
@@ -1892,6 +1895,7 @@ private: System::Windows::Forms::DataGridViewButtonColumn^ accionEliminar;
 		panelVerReservas->Visible = false;
 		panelConfiguracion->Visible = false;
 	}
+	
 private: System::Void btnNuevaReserva_Click(System::Object^ sender, System::EventArgs^ e) {
 	panelInicio->Visible = false;
 	panelNuevaReserva->Visible = true;
@@ -1933,6 +1937,23 @@ private: System::Void btnGuardarReserva_Click(System::Object^ sender, System::Ev
 }
 private: System::Void btnBuscar_Click(System::Object^ sender, System::EventArgs^ e) {
 MessageBox::Show("Buscando");
+}
+private: System::Void btnGuardar_AgregarCliente_Click(System::Object^ sender, System::EventArgs^ e) {
+	MessageBox::Show("Hola mundo...");
+	/*Utils util;
+	int tipoDoc = 1;
+	String^ nroDocAux = textNumDocumento_AC->Text;
+	std::string nroDoc = util.getTextBox(nroDocAux);
+	String^ nombresAux = textNumDocumento_AC->Text;
+	std::string nombres = util.getTextBox(nombresAux);
+	String^ apellidosAux = textNumDocumento_AC->Text;
+	std::string apellidos = util.getTextBox(apellidosAux);
+	String^ direccionAux = textNumDocumento_AC->Text;
+	std::string direccion = util.getTextBox(direccionAux);
+	String^ emailAux = textNumDocumento_AC->Text;
+	std::string email = util.getTextBox(emailAux);
+	
+	util.agregarCliente(tipoDoc, nroDoc, nombres, apellidos, direccion, email, 0);*/
 }
 };
 }

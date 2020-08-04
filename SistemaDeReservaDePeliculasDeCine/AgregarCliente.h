@@ -1,4 +1,5 @@
 #pragma once
+#include "Utils.h"
 
 namespace WinFormsProject {
 
@@ -17,6 +18,7 @@ namespace WinFormsProject {
 			InitializeComponent();
 		}
 
+
 	protected:
 		~AgregarCliente()
 		{
@@ -26,7 +28,7 @@ namespace WinFormsProject {
 			}
 		}
 	private: System::Windows::Forms::Panel^ panelAgregarCliente;
-	private: System::Windows::Forms::Button^ btnGuardar_AgregarCliente;
+	private: System::Windows::Forms::Button^ btnGuardar_AgregarCliente;//
 
 	private: System::Windows::Forms::Button^ btnCancelar_AgregarCliente;
 	private: System::Windows::Forms::ComboBox^ comboTipoDocumento_AC;
@@ -77,6 +79,7 @@ namespace WinFormsProject {
 			this->comboTipoDocumento_AC = (gcnew System::Windows::Forms::ComboBox());
 			this->btnCancelar_AgregarCliente = (gcnew System::Windows::Forms::Button());
 			this->btnGuardar_AgregarCliente = (gcnew System::Windows::Forms::Button());
+			this->inicializarComboTipoDocumento_AC();
 			
 			this->panelAgregarCliente->SuspendLayout();
 			this->SuspendLayout();
@@ -231,6 +234,7 @@ namespace WinFormsProject {
 			this->btnCancelar_AgregarCliente->TabIndex = 12;
 			this->btnCancelar_AgregarCliente->Text = L"CANCELAR";
 			this->btnCancelar_AgregarCliente->UseVisualStyleBackColor = true;
+			this->btnCancelar_AgregarCliente->Click += gcnew System::EventHandler(this, &AgregarCliente::btnCancelar_AgregarCliente_Click);
 			// 
 			// btnGuardar_AgregarCliente
 			// 
@@ -240,6 +244,8 @@ namespace WinFormsProject {
 			this->btnGuardar_AgregarCliente->TabIndex = 13;
 			this->btnGuardar_AgregarCliente->Text = L"GUARDAR";
 			this->btnGuardar_AgregarCliente->UseVisualStyleBackColor = true;
+			this->btnGuardar_AgregarCliente->Click += gcnew System::EventHandler(this, &AgregarCliente::btnGuardar_AgregarCliente_Click);
+
 			//
 			// Ventana Main
 			//
@@ -255,6 +261,40 @@ namespace WinFormsProject {
 			this->panelAgregarCliente->PerformLayout();
 			this->ResumeLayout(false);
 
+		}
+		private: System::Void btnGuardar_AgregarCliente_Click(System::Object^ sender, System::EventArgs^ e) {
+			Utils util;
+			String^ tipoAux = comboTipoDocumento_AC->Text;
+			std::string tipo = util.getTextBox(tipoAux);
+			int tipoDoc;
+			if (tipo == "DNI") {
+				tipoDoc = 1;
+			}
+			else {
+				tipoDoc = 2;
+			}
+			String^ nroDocAux = textNumDocumento_AC->Text;
+			std::string nroDoc = util.getTextBox(nroDocAux);
+			String^ nombresAux = textNombres_AC->Text;
+			std::string nombres = util.getTextBox(nombresAux);
+			String^ apellidosAux = textApellidos_AC->Text;
+			std::string apellidos = util.getTextBox(apellidosAux);
+			String^ direccionAux = textDireccion_AC->Text;
+			std::string direccion = util.getTextBox(direccionAux);
+			String^ emailAux = textEmail_AC->Text;
+			std::string email = util.getTextBox(emailAux);
+			if (nombres != "" && apellidos != "" && nroDoc != "" && direccion != "" && email != "") {
+				util.agregarCliente(tipoDoc, nroDoc, nombres, apellidos, direccion, email, 0);
+			}
+			this->Close();
+		}
+		private: System::Void btnCancelar_AgregarCliente_Click(System::Object^ sender, System::EventArgs^ e) {
+			this->Close();
+		}
+		private: System::Void inicializarComboTipoDocumento_AC() {
+			this->comboTipoDocumento_AC->Items->Add("DNI");
+			this->comboTipoDocumento_AC->Items->Add("Carnet de extranjería");
+			this->comboTipoDocumento_AC->Text = "DNI";
 		}
 	};
 }
