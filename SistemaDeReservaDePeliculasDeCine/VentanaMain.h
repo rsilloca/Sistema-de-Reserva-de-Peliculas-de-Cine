@@ -1797,6 +1797,7 @@ private: System::Windows::Forms::DataGridViewButtonColumn^ accionEliminar;
 #pragma endregion
 
 		public: static Cine* cine;
+		private: Taquillero* usuario;
 
 		private: System::Void inicializarSistema() {
 			
@@ -1858,9 +1859,14 @@ private: System::Windows::Forms::DataGridViewButtonColumn^ accionEliminar;
 		private: System::Void inicializarImagenes() {
 			this->iconLogin->Image = Image::FromFile(L"icon.jpg");
 			this->logoInicio->Image = Image::FromFile(L"logo.jpg");
-			this->iconUser->Image = Image::FromFile(L"icon_user.png");
+			// this->iconUser->Image = Image::FromFile(L"icon_user.png");
 			this->seleccionarButaca->Image = Image::FromFile(L"reserva_asientos.jpg");
-			this->imgPerfil->Image = Image::FromFile(L"icon_user.png");
+			// this->imgPerfil->Image = Image::FromFile(L"icon_user.png");
+		}
+		private: System::Void inicializarInfoUsuario() {
+			this->iconUser->Image = Image::FromFile(gcnew String(this->usuario->getRutaImg()));
+			this->imgPerfil->Image = Image::FromFile(gcnew String(this->usuario->getRutaImg()));
+			this->labelNomUsuario->Text = gcnew String(this->usuario->getNombre());
 		}
 	private: System::Void btnIngresar_Click(System::Object^ sender, System::EventArgs^ e) {
 		Taquillero* t = this->cine->getTaquilla().getTaquilleros();
@@ -1871,6 +1877,8 @@ private: System::Windows::Forms::DataGridViewButtonColumn^ accionEliminar;
 				this->textBoxPwd->Text == gcnew String(t[i].getPassword()))
 			{
 				found = true;
+				this->usuario = &t[i];
+				inicializarInfoUsuario();
 				break;
 			}
 		}

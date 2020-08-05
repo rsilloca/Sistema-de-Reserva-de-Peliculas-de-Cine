@@ -198,7 +198,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\Sistema-de-Reserva-de-Peliculas-de-Cine\SistemaDeReservaDePeliculasDeCine\icon.jpg" />
+    <Image Include="anyela.jpg" />
     <Image Include="app.ico" />
+    <Image Include="arnold.jpg" />
     <Image Include="artemis_fowl.jpg" />
     <Image Include="black_widow.jpg" />
     <Image Include="D:\EPIS\EPIS 2020\PS\Lab\ProyectoFinal\icon_user.png" />
@@ -208,11 +210,14 @@
     <Image Include="free_guy.jpg" />
     <Image Include="historias_lamentables.jpg" />
     <Image Include="jungle_cruise.jpg" />
+    <Image Include="karen.jpg" />
     <Image Include="la_mujer_en_la_ventana.jpg" />
     <Image Include="los_nuevos_mutantes.jpg" />
+    <Image Include="melany.jpg" />
     <Image Include="minions.jpg" />
     <Image Include="morbius.jpg" />
     <Image Include="mulan.jpg" />
+    <Image Include="raquel.jpg" />
     <Image Include="sin_tiempo_para_morir.jpg" />
     <Image Include="top_gun_maverick.jpg" />
     <Image Include="un_lugar_tranquilo.jpg" />

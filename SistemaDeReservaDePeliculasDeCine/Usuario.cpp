@@ -16,3 +16,11 @@ char* Usuario::getPassword(){
 void Usuario::setPassword(char* pas){
     password = pas;
 }
+
+char* Usuario::getRutaImg() {
+    return rutaImg;
+}
+
+void Usuario::setRutaImg(char* ruta) {
+    rutaImg = ruta;
+}
