@@ -1983,6 +1983,7 @@ private: System::Windows::Forms::PictureBox^ vrImgTv;
 			else if (c == 5)
 			{
 				// Eliminar
+				MessageBox::Show("Se ha eliminado correctamente la reserva.");
 			}
 			// MessageBox::Show("row: " + senderGrid->RowCount + " column: " + senderGrid->ColumnCount);
 		}
