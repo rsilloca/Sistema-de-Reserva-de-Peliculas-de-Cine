@@ -24,6 +24,7 @@ public:
 	Cliente* getListaCliente();
 	void agregarCliente(int tipoDoc, std::string nroDoc, std::string nombres, std::string apellidos, std::string direccion, std::string email, int numReservas);
 	int cantidadClientes();
+	void actualizarUsuario(int id, int tipoDoc, std::string nroDoc, std::string nombres, std::string apellidos, std::string direccion, std::string email, std::string user, std::string pwd);
 	Taquillero* getListaTaquillero();
 	FuncionDeCine* getListaFuncionDeCine(Pelicula*);
 	Hora strToHora(const char*);

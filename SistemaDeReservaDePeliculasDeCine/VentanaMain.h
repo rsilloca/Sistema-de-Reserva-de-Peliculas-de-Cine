@@ -973,6 +973,7 @@ private: System::Windows::Forms::DataGridViewButtonColumn^ accionEliminar;
 			this->button2->TabIndex = 20;
 			this->button2->Text = L"Habilitar Modo Edición";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &VentanaMain::btnHabilitarEdicion_Click);
 			// 
 			// button1
 			// 
@@ -982,6 +983,7 @@ private: System::Windows::Forms::DataGridViewButtonColumn^ accionEliminar;
 			this->button1->TabIndex = 19;
 			this->button1->Text = L"Guardar Cambios";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &VentanaMain::btnGuardarCambios_Click);
 			// 
 			// label23
 			// 
@@ -1140,7 +1142,7 @@ private: System::Windows::Forms::DataGridViewButtonColumn^ accionEliminar;
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(104, 13);
 			this->label14->TabIndex = 0;
-			this->label14->Text = L"Tipo de Documento:";
+			this->label14->Text = L"Tipo de Documento DNI:";
 			// 
 			// panel5
 			// 
@@ -1921,6 +1923,72 @@ private: System::Void btnConfiguracion_Click(System::Object^ sender, System::Eve
 	panelNuevaReserva->Visible = false;
 	panelVerReservas->Visible = false;
 	panelConfiguracion->Visible = true;
+	this->comboBox2->Items->Add("DNI");
+	this->comboBox2->Items->Add("Carnet de extranjeria");
+	if (this->usuario->getTipoDocumento() == 1)
+	{
+		this->comboBox2->Text = "DNI";
+	}
+	else
+	{
+		this->comboBox2->Text = "Carnet de extranjeria";
+	}
+	
+	this->comboBox2->Enabled = false;
+	this->textBox4->Text = gcnew String(this->usuario->getNumeroDocumento());
+	this->textBox4->Enabled = false;
+	this->textBox5->Text = gcnew String(this->usuario->getNombre());
+	this->textBox5->Enabled = false;
+	this->textBox6->Text = gcnew String(this->usuario->getApellido());
+	this->textBox6->Enabled = false;
+	this->textBox7->Text = gcnew String(this->usuario->getDireccion());
+	this->textBox7->Enabled = false;
+	this->textBox8->Text = gcnew String(this->usuario->getEmail());
+	this->textBox8->Enabled = false;
+	this->textBox9->Text = gcnew String(this->usuario->getUsuario());
+	this->textBox9->Enabled = false;
+	this->textBox10->Text = gcnew String(this->usuario->getPassword());
+	this->textBox10->Enabled = false;
+}
+private: System::Void btnHabilitarEdicion_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->comboBox2->Enabled = true;
+	this->textBox4->Enabled = true;
+	this->textBox5->Enabled = true;
+	this->textBox6->Enabled = true;
+	this->textBox7->Enabled = true;
+	this->textBox8->Enabled = true;
+	this->textBox9->Enabled = true;
+	this->textBox10->Enabled = true;
+}
+private: System::Void btnGuardarCambios_Click(System::Object^ sender, System::EventArgs^ e) {
+	Utils util;
+	String^ tipoAux = comboBox2->Text;
+	std::string tipo = util.getTextBox(tipoAux);
+	int tipoDoc;
+	if (tipo == "DNI") {
+		tipoDoc = 1;
+	}
+	else {
+		tipoDoc = 2;
+	}
+	String^ nroDocAux = textBox4->Text;
+	std::string nroDoc = util.getTextBox(nroDocAux);
+	String^ nombresAux = textBox5->Text;
+	std::string nombres = util.getTextBox(nombresAux);
+	String^ apellidosAux = textBox6->Text;
+	std::string apellidos = util.getTextBox(apellidosAux);
+	String^ direccionAux = textBox7->Text;
+	std::string direccion = util.getTextBox(direccionAux);
+	String^ emailAux = textBox8->Text;
+	std::string email = util.getTextBox(emailAux);
+	String^ userAux = textBox8->Text;
+	std::string user = util.getTextBox(userAux);
+	String^ pwdAux = textBox9->Text;
+	std::string pwd = util.getTextBox(pwdAux);
+
+	if (nombres != "" && apellidos != "" && nroDoc != "" && direccion != "" && email != "" && user != "" && pwd != "") {
+		util.actualizarUsuario(this->usuario->getId(), tipoDoc, nroDoc, nombres, apellidos, direccion, email, user, pwd);
+	}
 }
 private: System::Void btnSalir_Click(System::Object^ sender, System::EventArgs^ e) {
 	panelLogin->Visible = true;
@@ -1946,22 +2014,6 @@ private: System::Void btnGuardarReserva_Click(System::Object^ sender, System::Ev
 private: System::Void btnBuscar_Click(System::Object^ sender, System::EventArgs^ e) {
 MessageBox::Show("Buscando");
 }
-private: System::Void btnGuardar_AgregarCliente_Click(System::Object^ sender, System::EventArgs^ e) {
-	MessageBox::Show("Hola mundo...");
-	/*Utils util;
-	int tipoDoc = 1;
-	String^ nroDocAux = textNumDocumento_AC->Text;
-	std::string nroDoc = util.getTextBox(nroDocAux);
-	String^ nombresAux = textNumDocumento_AC->Text;
-	std::string nombres = util.getTextBox(nombresAux);
-	String^ apellidosAux = textNumDocumento_AC->Text;
-	std::string apellidos = util.getTextBox(apellidosAux);
-	String^ direccionAux = textNumDocumento_AC->Text;
-	std::string direccion = util.getTextBox(direccionAux);
-	String^ emailAux = textNumDocumento_AC->Text;
-	std::string email = util.getTextBox(emailAux);
-	
-	util.agregarCliente(tipoDoc, nroDoc, nombres, apellidos, direccion, email, 0);*/
-}
+
 };
 }
