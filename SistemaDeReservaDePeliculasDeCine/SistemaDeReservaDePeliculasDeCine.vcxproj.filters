@@ -229,6 +229,21 @@
     <Image Include="jungle_cruise.jpg">
       <Filter>Archivos de recursos</Filter>
     </Image>
+    <Image Include="raquel.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="melany.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="karen.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="arnold.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="anyela.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <None Include="cine.dat">

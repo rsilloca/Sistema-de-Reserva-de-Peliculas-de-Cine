@@ -548,6 +548,7 @@ Taquillero* Utils::getListaTaquillero()
 		string email;
 		string usuario;
 		string pass;
+		string rutaImg;
 		int count = 0;
 		while (!lectura.eof())
 		{
@@ -594,8 +595,13 @@ Taquillero* Utils::getListaTaquillero()
 				listaTaquillero[count].setUsuario(strToCharPointer(usuario.c_str()));
 
 				linea = linea.substr(i + 1);
-				pass = linea;
+				i = linea.find(",");
+				pass = linea.substr(0, i);
 				listaTaquillero[count].setPassword(strToCharPointer(pass.c_str()));
+
+				linea = linea.substr(i + 1);
+				rutaImg = linea;
+				listaTaquillero[count].setRutaImg(strToCharPointer(rutaImg.c_str()));
 			}
 			catch (exception e)
 			{
