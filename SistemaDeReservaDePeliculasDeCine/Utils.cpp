@@ -921,8 +921,8 @@ void Utils::actualizarUsuario(int id, int tipoDoc, string nroDoc, string nombres
 	escritura.close();
 	printf("registro exitoso");
 }
-string Utils::convertToString(char* a, int size)
-{
-	string s(a);
-	return s;
+string Utils::convertToString(char* a, int size)
+{
+	string s(a);
+	return s;
 }
