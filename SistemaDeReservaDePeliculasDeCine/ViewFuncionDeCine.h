@@ -68,6 +68,7 @@ namespace WinFormsProject {
 			this->tituloPelicula->Size = System::Drawing::Size(100, 40);
 			this->tituloPelicula->Text = gcnew String(this->funcion->getPelicula().getNombre());
 			this->tituloPelicula->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->tituloPelicula->Click += gcnew System::EventHandler(this, &PanelViewFuncionDeCine::generarEvento);
 			// 
 			// salaFuncion
 			// 
@@ -80,6 +81,7 @@ namespace WinFormsProject {
 			this->salaFuncion->Size = System::Drawing::Size(100, 13);
 			this->salaFuncion->Text = gcnew String("Sala" + this->funcion->getNumeroSala() + "D");
 			this->salaFuncion->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->salaFuncion->Click += gcnew System::EventHandler(this, &PanelViewFuncionDeCine::generarEvento);
 			// 
 			// fechaFuncion
 			// 
@@ -95,6 +97,7 @@ namespace WinFormsProject {
 			int min = this->funcion->getFecha().getHora().getMinutos();
 			this->fechaFuncion->Text = gcnew String(dia + "/" + mes + "/" + anio + " " + hora + ":" + min);
 			this->fechaFuncion->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->fechaFuncion->Click += gcnew System::EventHandler(this, &PanelViewFuncionDeCine::generarEvento);
 			// 
 			// pictureImgPelicula
 			// 
@@ -105,6 +108,7 @@ namespace WinFormsProject {
 			this->pictureImgPelicula->TabStop = false;
 			// MessageBox::Show(gcnew String("" + this->funcion->getPelicula().getId()));
 			this->pictureImgPelicula->Image = Image::FromFile(gcnew String(this->funcion->getPelicula().getNombreImg()));
+			this->pictureImgPelicula->Click += gcnew System::EventHandler(this, &PanelViewFuncionDeCine::generarEvento);
 		}
 
 	public: void setBackColor(System::Drawing::Color color) {
@@ -113,6 +117,16 @@ namespace WinFormsProject {
 
 	public: int getIdFuncion() {
 		return this->funcion->getId();
+	}
+
+	public: FuncionDeCine* getFuncion() {
+		return this->funcion;
+	}
+
+	public: System::Void generarEvento(System::Object^ sender, System::EventArgs^ e) {
+		MouseEventArgs^ evento = (MouseEventArgs^) e;
+		this->OnMouseClick(evento);
+		MessageBox::Show("evento " + evento->ToString());
 	}
 
 	};

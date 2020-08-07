@@ -1,5 +1,6 @@
 ﻿1,1,34567890,Esteban,Martinez,Av. Independencia 123,emartinez@test.com,1,1
-2,1,34567892,Maria,Casas,San Juan de Dios,mcasas@test.com,2,1-2
-3,1,45678454,Juan,Flores,Av. Brasil 542,jflores@test.com,1,3
+2,1,34567892,Maria,Casas,San Juan de Dios,mcasas@test.com,2,2-3
+3,1,45678454,Juan,Flores,Av. Brasil 542,jflores@test.com,1,4
 4,1,23467894,Patricio,Gonzales,Av. La Marina S/N,pgonzales@test.com,0
 5,2,73194770,Arnold,Mollo,Guillermo Mercado P1,amolloa@unsa.edu.pe,0
+6,1,87654321,Pedro,Gonzales,Mi casa 123,pgonzales@user.com,0
