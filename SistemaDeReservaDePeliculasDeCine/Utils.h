@@ -25,6 +25,7 @@ public:
 	void agregarCliente(int tipoDoc, std::string nroDoc, std::string nombres, std::string apellidos, std::string direccion, std::string email, int numReservas);
 	int cantidadClientes();
 	void actualizarUsuario(int id, int tipoDoc, std::string nroDoc, std::string nombres, std::string apellidos, std::string direccion, std::string email, std::string user, std::string pwd);
+	std::string convertToString(char* a, int size);
 	Taquillero* getListaTaquillero();
 	FuncionDeCine* getListaFuncionDeCine(Pelicula*);
 	Hora strToHora(const char*);
