@@ -1986,9 +1986,15 @@ private: System::Void btnGuardarCambios_Click(System::Object^ sender, System::Ev
 	String^ pwdAux = textBox9->Text;
 	std::string pwd = util.getTextBox(pwdAux);
 
-	if (nombres != "" && apellidos != "" && nroDoc != "" && direccion != "" && email != "" && user != "" && pwd != "") {
-		util.actualizarUsuario(this->usuario->getId(), tipoDoc, nroDoc, nombres, apellidos, direccion, email, user, pwd);
-	}
+	util.actualizarUsuario(this->usuario->getId(), tipoDoc, nroDoc, nombres, apellidos, direccion, email, user, pwd);
+	this->comboBox2->Enabled = false;
+	this->textBox4->Enabled = false;
+	this->textBox5->Enabled = false;
+	this->textBox6->Enabled = false;
+	this->textBox7->Enabled = false;
+	this->textBox8->Enabled = false;
+	this->textBox9->Enabled = false;
+	this->textBox10->Enabled = false;
 }
 private: System::Void btnSalir_Click(System::Object^ sender, System::EventArgs^ e) {
 	panelLogin->Visible = true;
