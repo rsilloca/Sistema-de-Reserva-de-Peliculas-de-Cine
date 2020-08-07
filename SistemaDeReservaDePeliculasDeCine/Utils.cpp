@@ -514,7 +514,8 @@ int Utils::cantidadClientes() {
 	f = fopen(Constantes::getClienteTXT(), "r");
 	if (f == NULL) {
 		printf("No se ha podido abrir el fichero.\n");
-		exit(1);
+		//exit(1);
+		return Constantes::CLIENTES_MAX;
 	}
 	while (!feof(f)) {
 		fgets(temp, 200, f);

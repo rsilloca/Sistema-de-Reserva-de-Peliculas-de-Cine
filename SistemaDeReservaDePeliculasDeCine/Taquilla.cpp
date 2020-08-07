@@ -19,7 +19,7 @@ Taquilla::Taquilla(Pelicula* peliculas)
 {
 	Utils util;
 	this->clientes = util.getListaCliente();
-	this->numCliente = Constantes::CLIENTES_MAX;
+	this->numCliente = util.cantidadClientes();
 	this->taquilleros = util.getListaTaquillero();
 	this->numTaquillero = Constantes::TAQUILLEROS_MAX;
 	this->funciones = util.getListaFuncionDeCine(peliculas);

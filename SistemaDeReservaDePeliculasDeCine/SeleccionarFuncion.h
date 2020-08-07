@@ -33,6 +33,9 @@ namespace WinFormsProject {
 				delete components;
 			}
 		}
+
+	private: FuncionDeCine* seleccionado;
+
 	private: System::Windows::Forms::Panel^ panelSeleccionarFuncion;
 	private: System::Windows::Forms::Button^ btnFiltrar_SF;
 

@@ -15,8 +15,9 @@ namespace WinFormsProject {
 	{
 
 	public:
-		PanelReservarAsientos(void)
+		PanelReservarAsientos(bool h)
 		{
+			this->habilitado = h;
 			InitializeComponent();
 		}
 
@@ -30,6 +31,8 @@ namespace WinFormsProject {
 		}
 
 	private:
+		Button^** asientosBtns;
+		bool habilitado;
 		System::ComponentModel::Container^ components;
 		//Arreglo de Butacas
 		Butaca* butacasSelccionadas = new Butaca;
@@ -42,17 +45,20 @@ namespace WinFormsProject {
 			int width = 50;
 			int height = 30;
 			char* letras[10] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
+			asientosBtns = (Button^**)malloc(Constantes::BUTACAS_FILAS * sizeof(Button^*));
 			for (int i = 0; i < Constantes::BUTACAS_FILAS; i++)
 			{
+				asientosBtns[i] = (Button^*)malloc(Constantes::BUTACAS_COLUMNAS * sizeof(Button^));
 				for (int j = 0; j < Constantes::BUTACAS_COLUMNAS; j++)
 				{
-					System::Windows::Forms::Button^ aux = (gcnew System::Windows::Forms::Button());
-					aux->Location = System::Drawing::Point(width * j, height * i);
-					aux->Size = System::Drawing::Size(width, height);
-					aux->BackColor = System::Drawing::Color::White;
-					aux->Text = String::Concat(gcnew String(letras[i]), j + 1);
-					aux->Click += gcnew System::EventHandler(this, &PanelReservarAsientos::clickAsiento);
-					this->Controls->Add(aux);
+					asientosBtns[i][j] = (gcnew System::Windows::Forms::Button());
+					asientosBtns[i][j]->Location = System::Drawing::Point(width * j, height * i);
+					asientosBtns[i][j]->Size = System::Drawing::Size(width, height);
+					asientosBtns[i][j]->BackColor = System::Drawing::Color::White;
+					asientosBtns[i][j]->Text = String::Concat(gcnew String(letras[i]), j + 1);
+					asientosBtns[i][j]->Enabled = this->habilitado;
+					asientosBtns[i][j]->Click += gcnew System::EventHandler(this, &PanelReservarAsientos::clickAsiento);
+					this->Controls->Add(asientosBtns[i][j]);
 				}
 			}
 			this->ResumeLayout(false);
@@ -99,6 +105,33 @@ namespace WinFormsProject {
 				aux->BackColor = System::Drawing::Color::White;
 			}
 		}
+
+	public: void setAsientoOcupado(int fila, int columna)
+	{
+		this->asientosBtns[fila][columna]->BackColor = System::Drawing::Color::Yellow;
+	}
+
+	public: void inhabilitarAsientos()
+	{
+		for (int i = 0; i < Constantes::BUTACAS_FILAS; i++)
+		{
+			for (int j = 0; j < Constantes::BUTACAS_COLUMNAS; j++)
+			{
+				this->asientosBtns[i][j]->Enabled = false;
+			}
+		}
+	}
+
+	public: void habilitarAsientos()
+	{
+		for (int i = 0; i < Constantes::BUTACAS_FILAS; i++)
+		{
+			for (int j = 0; j < Constantes::BUTACAS_COLUMNAS; j++)
+			{
+				this->asientosBtns[i][j]->Enabled = true;
+			}
+		}
+	}
 
 	};
 }
