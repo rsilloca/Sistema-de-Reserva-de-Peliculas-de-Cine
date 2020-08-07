@@ -525,17 +525,11 @@ int Utils::cantidadClientes() {
 void Utils::actualizarUsuario(int id, int tipoDoc, string nroDoc, string nombres, string apellidos, string direccion, string email, string user, string pwd)
 {
 	char temp[200];
-	FILE* f;
 	string users[5];
-	f = fopen(Constantes::getTaquilleroTXT(), "r");
-	if (f == NULL) {
-		printf("No se ha podido abrir el fichero.\n");
-		exit(1);
-	}
 	int i = 0;
-	while (!feof(f)) {
-		fgets(temp, 400, f);
-		users[i] = convertToString(temp, 400);
+	std::ifstream leer(Constantes::getTaquilleroTXT());
+	while (getline(leer, users[i])) {
+		i++;
 	}
 	string img;
 	switch (id){
@@ -551,17 +545,29 @@ void Utils::actualizarUsuario(int id, int tipoDoc, string nroDoc, string nombres
 		img = "anyela.jpg"; break;
 	}
 	fstream escritura;
-	escritura.open(Constantes::getTaquilleroTXT(), ios::trunc);
+	escritura.open(Constantes::getTaquilleroTXT(), ios::out);
 	for (int i = 0; i < 5; i++) {
-		if (i + 1 != id)
-		{
-			escritura <<"\n"<< users[i];
-		}
-		else
-		{
-			escritura <<"\n"<< id << "," << tipoDoc << "," << nroDoc << "," << nombres << "," << apellidos << "," << direccion << "," << email << "," << user << "," << pwd << "," << img;
-		}
+		
+			if (i + 1 != id && i == 0)
+			{
+				escritura << users[i];
+			}
+			else if (i + 1 != id)
+			{
+				escritura <<"\n"<< users[i];
+			}
+			else if(i == 0)
+			{
+				escritura << id << "," << tipoDoc << "," << nroDoc << "," << nombres << "," << apellidos << "," << direccion << "," << email << "," << user << "," << pwd << "," << img;
+			}
+			else
+			{
+				escritura << "\n" << id << "," << tipoDoc << "," << nroDoc << "," << nombres << "," << apellidos << "," << direccion << "," << email << "," << user << "," << pwd << "," << img;
+			}
+		
+		
 	}
+	escritura.close();
 	printf("registro exitoso");
 }
 string Utils::convertToString(char* a, int size)
