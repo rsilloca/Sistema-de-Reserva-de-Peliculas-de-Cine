@@ -34,6 +34,8 @@ namespace WinFormsProject {
 			}
 		}
 
+	private: bool fSelect = false;
+	private: int previo = 0;
 	private: FuncionDeCine* seleccionado;
 
 	private: System::Windows::Forms::Panel^ panelSeleccionarFuncion;
@@ -133,6 +135,7 @@ namespace WinFormsProject {
 			this->btnSeleccionar_SF->TabIndex = 12;
 			this->btnSeleccionar_SF->Text = L"SELECCIONAR";
 			this->btnSeleccionar_SF->UseVisualStyleBackColor = true;
+			this->btnSeleccionar_SF->Click += gcnew System::EventHandler(this, &SeleccionarFuncion::cerrarModal);
 			// 
 			// btnCancelar_SF
 			// 
@@ -142,6 +145,7 @@ namespace WinFormsProject {
 			this->btnCancelar_SF->TabIndex = 11;
 			this->btnCancelar_SF->Text = L"CANCELAR";
 			this->btnCancelar_SF->UseVisualStyleBackColor = true;
+			this->btnCancelar_SF->Click += gcnew System::EventHandler(this, &SeleccionarFuncion::cerrarModal);
 			// 
 			// btnFiltrar_SF
 			// 
@@ -293,7 +297,12 @@ namespace WinFormsProject {
 		void clickFuncion(System::Object^ sender, System::EventArgs^ e) {
 			PanelViewFuncionDeCine^ aux = (PanelViewFuncionDeCine^)sender;
 			aux->setBackColor(Color::Yellow);
-			MessageBox::Show(aux->getIdFuncion() + "");
+			Utils u;
+			u.agregarFuncionGuardada(aux->getFuncion());
+		}
+
+		void cerrarModal(System::Object^ sender, System::EventArgs^ e) {
+			this->Close();
 		}
 
 	};

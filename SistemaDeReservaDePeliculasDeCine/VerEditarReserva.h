@@ -281,7 +281,7 @@ namespace WinFormsProject {
 			Pelicula* pelis = u.getListaPelicula();
 			FuncionDeCine* funciones = u.getListaFuncionDeCine(pelis);
 			FuncionDeCine fun = u.getFuncionPorId(funciones, reserva->getNumeroFuncion());
-			this->vrComboBoxCliente->Text = gcnew String(cliente->getNombre());
+			this->vrComboBoxCliente->Text = gcnew String(cliente->getNombre()) + " " + gcnew String(cliente->getApellido());
 			this->vrTextPelicula->Text = gcnew String(fun.getPelicula().getNombre());
 			int dia = fun.getFecha().getDia();
 			int mes = fun.getFecha().getMes();
@@ -296,6 +296,7 @@ namespace WinFormsProject {
 				((PanelReservarAsientos^)this->panelReservarAsientos)->setAsientoOcupado(butacas[i].getFila(), butacas[i].getColumna());
 			}
 			this->vrTextButacas->Text = "numeros";
+			this->vrImgPelicula->Image = Image::FromFile(gcnew String(fun.getPelicula().getNombreImg()));
 		}
 
 		void bloquearControles()

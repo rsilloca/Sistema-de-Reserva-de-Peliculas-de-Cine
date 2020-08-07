@@ -32,7 +32,8 @@ namespace WinFormsProject {
 			//TODO: Konstruktorcode hier hinzufügen.
 			//
 		}
-
+	private: bool iniciando = true;
+	private: System::Windows::Forms::Panel^ panelReservarAsientos;
 	protected:
 		/// <summary>
 		/// Verwendete Ressourcen bereinigen.
@@ -83,11 +84,12 @@ namespace WinFormsProject {
 	private: System::Windows::Forms::Button^ btnSeleccionarFuncion;
 
 	private: System::Windows::Forms::Button^ btnAgregarCliente;
+	private: System::Windows::Forms::TextBox^ textoFuncionDeCine;
 
 
 
 
-	private: System::Windows::Forms::TextBox^ textBox1;
+
 	private: System::Windows::Forms::ComboBox^ comboBoxClientes;
 
 	private: System::Windows::Forms::Label^ label7;
@@ -327,7 +329,7 @@ private: System::Windows::Forms::PictureBox^ vrImgTv;
 			this->seleccionarButaca = (gcnew System::Windows::Forms::PictureBox());
 			this->btnSeleccionarFuncion = (gcnew System::Windows::Forms::Button());
 			this->btnAgregarCliente = (gcnew System::Windows::Forms::Button());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textoFuncionDeCine = (gcnew System::Windows::Forms::TextBox());
 			this->comboBoxClientes = (gcnew System::Windows::Forms::ComboBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
@@ -396,6 +398,9 @@ private: System::Windows::Forms::PictureBox^ vrImgTv;
 			this->label2_AC = (gcnew System::Windows::Forms::Label());
 			this->label1_AC = (gcnew System::Windows::Forms::Label());
 			this->panelVerEditarReserva = (gcnew System::Windows::Forms::Panel());
+			this->vrBtnGuardar = (gcnew System::Windows::Forms::Button());
+			this->vrBtnCancelar = (gcnew System::Windows::Forms::Button());
+			this->vrImgTv = (gcnew System::Windows::Forms::PictureBox());
 			this->vrLabel5 = (gcnew System::Windows::Forms::Label());
 			this->vrLabel4 = (gcnew System::Windows::Forms::Label());
 			this->vrLabel3 = (gcnew System::Windows::Forms::Label());
@@ -428,9 +433,6 @@ private: System::Windows::Forms::PictureBox^ vrImgTv;
 			this->label3_SF = (gcnew System::Windows::Forms::Label());
 			this->label2_FS = (gcnew System::Windows::Forms::Label());
 			this->label1_SF = (gcnew System::Windows::Forms::Label());
-			this->vrImgTv = (gcnew System::Windows::Forms::PictureBox());
-			this->vrBtnCancelar = (gcnew System::Windows::Forms::Button());
-			this->vrBtnGuardar = (gcnew System::Windows::Forms::Button());
 			this->panelLogin->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->iconLogin))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->iconUser))->BeginInit();
@@ -454,12 +456,12 @@ private: System::Windows::Forms::PictureBox^ vrImgTv;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			this->panelAgregarCliente->SuspendLayout();
 			this->panelVerEditarReserva->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->vrImgTv))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->vrImgPelicula))->BeginInit();
 			this->panelSeleccionarFuncion->SuspendLayout();
 			this->panelPeliculas_SF->SuspendLayout();
 			this->panelPeli->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureImgPeli))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->vrImgTv))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panelLogin
@@ -712,7 +714,7 @@ private: System::Windows::Forms::PictureBox^ vrImgTv;
 			this->panelConfNuevaReserva->Controls->Add(this->seleccionarButaca);
 			this->panelConfNuevaReserva->Controls->Add(this->btnSeleccionarFuncion);
 			this->panelConfNuevaReserva->Controls->Add(this->btnAgregarCliente);
-			this->panelConfNuevaReserva->Controls->Add(this->textBox1);
+			this->panelConfNuevaReserva->Controls->Add(this->textoFuncionDeCine);
 			this->panelConfNuevaReserva->Controls->Add(this->comboBoxClientes);
 			this->panelConfNuevaReserva->Controls->Add(this->label7);
 			this->panelConfNuevaReserva->Controls->Add(this->label6);
@@ -760,12 +762,12 @@ private: System::Windows::Forms::PictureBox^ vrImgTv;
 			this->btnAgregarCliente->UseVisualStyleBackColor = true;
 			this->btnAgregarCliente->Click += gcnew System::EventHandler(this, &VentanaMain::btnAgregarCliente_Click);
 			// 
-			// textBox1
+			// textoFuncionDeCine
 			// 
-			this->textBox1->Location = System::Drawing::Point(85, 50);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(500, 20);
-			this->textBox1->TabIndex = 3;
+			this->textoFuncionDeCine->Location = System::Drawing::Point(85, 50);
+			this->textoFuncionDeCine->Name = L"textoFuncionDeCine";
+			this->textoFuncionDeCine->Size = System::Drawing::Size(500, 20);
+			this->textoFuncionDeCine->TabIndex = 3;
 			// 
 			// comboBoxClientes
 			// 
@@ -1445,6 +1447,32 @@ private: System::Windows::Forms::PictureBox^ vrImgTv;
 			this->panelVerEditarReserva->TabIndex = 3;
 			this->panelVerEditarReserva->Visible = false;
 			// 
+			// vrBtnGuardar
+			// 
+			this->vrBtnGuardar->Location = System::Drawing::Point(275, 486);
+			this->vrBtnGuardar->Name = L"vrBtnGuardar";
+			this->vrBtnGuardar->Size = System::Drawing::Size(245, 23);
+			this->vrBtnGuardar->TabIndex = 14;
+			this->vrBtnGuardar->Text = L"GUARDAR CAMBIOS";
+			this->vrBtnGuardar->UseVisualStyleBackColor = true;
+			// 
+			// vrBtnCancelar
+			// 
+			this->vrBtnCancelar->Location = System::Drawing::Point(20, 486);
+			this->vrBtnCancelar->Name = L"vrBtnCancelar";
+			this->vrBtnCancelar->Size = System::Drawing::Size(245, 23);
+			this->vrBtnCancelar->TabIndex = 13;
+			this->vrBtnCancelar->Text = L"CANCELAR";
+			this->vrBtnCancelar->UseVisualStyleBackColor = true;
+			// 
+			// vrImgTv
+			// 
+			this->vrImgTv->Location = System::Drawing::Point(20, 175);
+			this->vrImgTv->Name = L"vrImgTv";
+			this->vrImgTv->Size = System::Drawing::Size(500, 125);
+			this->vrImgTv->TabIndex = 11;
+			this->vrImgTv->TabStop = false;
+			// 
 			// vrLabel5
 			// 
 			this->vrLabel5->AutoSize = true;
@@ -1770,32 +1798,6 @@ private: System::Windows::Forms::PictureBox^ vrImgTv;
 			this->label1_SF->TabIndex = 0;
 			this->label1_SF->Text = L"Película:";
 			// 
-			// vrImgTv
-			// 
-			this->vrImgTv->Location = System::Drawing::Point(20, 175);
-			this->vrImgTv->Name = L"vrImgTv";
-			this->vrImgTv->Size = System::Drawing::Size(500, 125);
-			this->vrImgTv->TabIndex = 11;
-			this->vrImgTv->TabStop = false;
-			// 
-			// vrBtnCancelar
-			// 
-			this->vrBtnCancelar->Location = System::Drawing::Point(20, 486);
-			this->vrBtnCancelar->Name = L"vrBtnCancelar";
-			this->vrBtnCancelar->Size = System::Drawing::Size(245, 23);
-			this->vrBtnCancelar->TabIndex = 13;
-			this->vrBtnCancelar->Text = L"CANCELAR";
-			this->vrBtnCancelar->UseVisualStyleBackColor = true;
-			// 
-			// vrBtnGuardar
-			// 
-			this->vrBtnGuardar->Location = System::Drawing::Point(275, 486);
-			this->vrBtnGuardar->Name = L"vrBtnGuardar";
-			this->vrBtnGuardar->Size = System::Drawing::Size(245, 23);
-			this->vrBtnGuardar->TabIndex = 14;
-			this->vrBtnGuardar->Text = L"GUARDAR CAMBIOS";
-			this->vrBtnGuardar->UseVisualStyleBackColor = true;
-			// 
 			// VentanaMain
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1803,12 +1805,12 @@ private: System::Windows::Forms::PictureBox^ vrImgTv;
 			this->ClientSize = System::Drawing::Size(960, 540);
 			this->Controls->Add(this->panelLogin);
 			this->Controls->Add(this->panelAgregarCliente);
-			this->Controls->Add(this->panelMenu);
-			this->Controls->Add(this->panelInicio);
-			this->Controls->Add(this->panelSeleccionarFuncion);
 			this->Controls->Add(this->panelNuevaReserva);
 			this->Controls->Add(this->panelVerReservas);
 			this->Controls->Add(this->panelConfiguracion);
+			this->Controls->Add(this->panelInicio);
+			this->Controls->Add(this->panelMenu);
+			this->Controls->Add(this->panelSeleccionarFuncion);
 			this->Controls->Add(this->panelVerEditarReserva);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"VentanaMain";
@@ -1847,13 +1849,13 @@ private: System::Windows::Forms::PictureBox^ vrImgTv;
 			this->panelAgregarCliente->PerformLayout();
 			this->panelVerEditarReserva->ResumeLayout(false);
 			this->panelVerEditarReserva->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->vrImgTv))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->vrImgPelicula))->EndInit();
 			this->panelSeleccionarFuncion->ResumeLayout(false);
 			this->panelSeleccionarFuncion->PerformLayout();
 			this->panelPeliculas_SF->ResumeLayout(false);
 			this->panelPeli->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureImgPeli))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->vrImgTv))->EndInit();
 			this->ResumeLayout(false);
 			inicializarSistema();
 		}
@@ -1867,7 +1869,7 @@ private: System::Windows::Forms::PictureBox^ vrImgTv;
 			
 			this->cine = Cine::getInstance();
 			
-			System::Windows::Forms::Panel^ panelReservarAsientos = gcnew PanelReservarAsientos(true);
+			panelReservarAsientos = gcnew PanelReservarAsientos(true);
 			panelReservarAsientos->Location = System::Drawing::Point(110, 225);
 			panelReservarAsientos->Size = System::Drawing::Size(500, 175);
 			this->panelConfNuevaReserva->Controls->Add(panelReservarAsientos);
@@ -1877,9 +1879,9 @@ private: System::Windows::Forms::PictureBox^ vrImgTv;
 		}
 		private: System::Void inicializarTablaReservas() {
 			Utils u;
-			Cliente* clientes = this->cine->getTaquilla().getClientes();
+			Cliente* clientes = u.getListaCliente();
 			FuncionDeCine* funciones = this->cine->getTaquilla().getFunciones();
-			for (int i = 0; i < Constantes::CLIENTES_MAX; i++)
+			for (int i = 0; i < u.cantidadClientes(); i++)
 			{
 				Reserva* clienteReservas = clientes[i].getReservas();
 				FuncionDeCine funcionAux;
@@ -1948,8 +1950,8 @@ private: System::Windows::Forms::PictureBox^ vrImgTv;
 						break;
 					}
 					String^ cliente = gcnew String(clientes[i].getNombre()) + " " + gcnew String(clientes[i].getApellido());
-					MessageBox::Show("cliente: " + cliente + " value " + this->dataGridReservas->Rows[r]->Cells[1]->Value + " idReserva " + idReserva);
-					if (this->dataGridReservas->Rows[r]->Cells[1]->Value == cliente)
+					// MessageBox::Show("cliente: " + cliente + " value " + this->dataGridReservas->Rows[r]->Cells[1]->Value + " idReserva " + idReserva);
+					if (this->dataGridReservas->Rows[r]->Cells[1]->Value->ToString() == cliente)
 					{
 						indiceCliente = i;
 						Reserva* clienteReservas = clientes[i].getReservas();
@@ -1968,15 +1970,14 @@ private: System::Windows::Forms::PictureBox^ vrImgTv;
 				if (c == 3)
 				{
 					// Ver
-					
-					//VerEditarReserva^ modal = gcnew VerEditarReserva(&clientes[indiceCliente], &reservas[indiceReserva], false);
-					//modal->ShowDialog();
+					VerEditarReserva^ modal = gcnew VerEditarReserva(&clientes[indiceCliente], &reservas[indiceReserva], false);
+					modal->ShowDialog();
 				}
 				else if (c == 4)
 				{
 					// Editar
-					//VerEditarReserva^ modal = gcnew VerEditarReserva(&clientes[indiceCliente], &reservas[indiceReserva], true);
-					//modal->ShowDialog();
+					VerEditarReserva^ modal = gcnew VerEditarReserva(&clientes[indiceCliente], &reservas[indiceReserva], true);
+					modal->ShowDialog();
 				}
 			}
 			else if (c == 5)
@@ -2037,6 +2038,40 @@ private: System::Windows::Forms::PictureBox^ vrImgTv;
 			Constantes::showMessage("Usuario no autorizado.");
 		}
 	}
+	private: System::Void guardarReserva() {
+		Butaca* butacas = ((PanelReservarAsientos^)this->panelReservarAsientos)->getButacasSeleccionadas();
+		int numButacas = ((PanelReservarAsientos^)this->panelReservarAsientos)->getNumButacasSeleccionadas();
+		Utils u;
+		FuncionDeCine select = u.getFuncionSeleccionada();
+		Utils util;
+		Cliente* clientes = u.getListaCliente();
+		int can = util.cantidadClientes();
+		int indiceCliente = 0;
+		for (int i = 0; i < can; i++)
+		{
+			String^ cliente = gcnew String(clientes[i].getNombre()) + " "
+				+ gcnew String(clientes[i].getApellido()) + " - "
+				+ gcnew String(clientes[i].getNumeroDocumento());
+			if (this->comboBoxClientes->Text->ToString() == cliente)
+			{
+				indiceCliente = i;
+				break;
+			}
+		}
+		String^ str = "";
+		for (int j = 0; j < numButacas; j++)
+		{
+			str += butacas[j].getFila();
+			str += "-";
+			str += butacas[j].getColumna();
+			//MessageBox::Show(str);
+			if (j != numButacas - 1)
+			{
+				str += ".";
+			}
+		}
+		u.guardarReservaTxt(0, select.getId(), u.getTextBox(str), indiceCliente);
+	}
 	private: System::Void btnInicio_Click(System::Object^ sender, System::EventArgs^ e) {
 		panelInicio->Visible = true;
 		panelNuevaReserva->Visible = false;
@@ -2049,12 +2084,30 @@ private: System::Void btnNuevaReserva_Click(System::Object^ sender, System::Even
 	panelNuevaReserva->Visible = true;
 	panelVerReservas->Visible = false;
 	panelConfiguracion->Visible = false;
+	//if (!iniciando)
+	//{
+	Utils u;
+	FuncionDeCine select = u.getFuncionSeleccionada();
+	this->textoFuncionDeCine->Text = gcnew String(select.getId().ToString()) + " " + gcnew String(select.getPelicula().getNombre());
+	Cliente* clientes = u.getListaCliente();
+	int can = u.cantidadClientes();
+	this->comboBoxClientes->Items->Clear();
+	for (int i = 0; i < can; i++)
+	{
+		this->comboBoxClientes->Items->Add(gcnew String(clientes[i].getNombre()) + " "
+			+ gcnew String(clientes[i].getApellido()) + " - "
+			+ gcnew String(clientes[i].getNumeroDocumento()));
+	}
+	iniciando = false;
+	//}
 }
 private: System::Void btnVerReservas_Click(System::Object^ sender, System::EventArgs^ e) {
 	panelInicio->Visible = false;
 	panelNuevaReserva->Visible = false;
 	panelVerReservas->Visible = true;
 	panelConfiguracion->Visible = false;
+	this->dataGridReservas->Rows->Clear();
+	inicializarTablaReservas();
 }
 private: System::Void btnConfiguracion_Click(System::Object^ sender, System::EventArgs^ e) {
 	panelInicio->Visible = false;
@@ -2081,6 +2134,16 @@ private: System::Void btnSeleccionarFuncion_Click(System::Object^ sender, System
 	//MessageBox::Show("Seleccionar función");
 }
 private: System::Void btnGuardarReserva_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->guardarReserva();
+	this->comboBoxClientes->Text = "";
+	this->textoFuncionDeCine->Text = "";
+	this->panelReservarAsientos->Visible = false;
+	this->panelReservarAsientos = gcnew PanelReservarAsientos(true);
+	panelReservarAsientos->Location = System::Drawing::Point(110, 225);
+	panelReservarAsientos->Size = System::Drawing::Size(500, 175);
+	this->panelReservarAsientos->Visible = true;
+	this->panelConfNuevaReserva->Controls->Add(panelReservarAsientos);
+
 	MessageBox::Show("Reserva guardada.");
 }
 private: System::Void btnBuscar_Click(System::Object^ sender, System::EventArgs^ e) {
