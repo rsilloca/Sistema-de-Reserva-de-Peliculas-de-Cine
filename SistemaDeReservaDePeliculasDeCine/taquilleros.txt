@@ -1,5 +1,5 @@
-1,1,75797799,Raquel Stephanie,Silloca Castro,La Colina P-29,rsilloca@unsa.edu.pe,rsilloca,12345,raquel.jpg
-2,1,12345678,Arnold David,Mollo Aquima,Cayma Enace - p-15,amolloa@unsa.edu.pe,amollo,54321,arnold.jpg
+﻿1,1,75797799,Raquel Stephanie,Silloca Castro,La Colina P-29,rsilloca@unsa.edu.pe,rsilloca,12345,raquel.jpg
+2,1,12345678,Arnold David,Mollo Aquima,Casita 123,amollo@unsa.edu.pe,amollo,12345,arnold.jpg
 3,1,12345678,Melany Meylin,Rios Castillo,Casita 123,mrios@unsa.edu.pe,mrios,12345,melany.jpg
 4,1,12345678,Karen Milagros,Ccari Tapia,Casita 123,kccari@unsa.edu.pe,kccari,12345,karen.jpg
 5,1,12345678,Anyela Stefhany,Mayta Yrco,Casita 123,amayta@unsa.edu.pe,amayta,12345,anyela.jpg

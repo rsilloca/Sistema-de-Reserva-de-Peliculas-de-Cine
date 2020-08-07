@@ -38,5 +38,10 @@ public:
 	int* strToListId(const char*, int, const char*);
 	Reserva* getReservasCliente(Reserva*, int*, int);
 	int getTamListStr(const char*, const char*);
+	int cantidadReservas();
+	FuncionDeCine getFuncionSeleccionada();
+	void agregarFuncionGuardada(FuncionDeCine*);
+	void guardarReservaTxt(int, int, std::string, int);
+	void guardarClientesTxt(Cliente*, int);
 };
 

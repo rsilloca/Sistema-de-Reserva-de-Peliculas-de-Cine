@@ -468,6 +468,7 @@ Cliente* Utils::getListaCliente()
 				{
 					linea = linea.substr(i + 1);
 					reservasStr = linea;
+					//Constantes::showMessage(reservasStr.c_str());
 					int* ids = strToListId(reservasStr.c_str(), numReservas, "-");
 					Reserva* reservasCliente = getReservasCliente(listaReservas, ids, numReservas);
 					listaCliente[count].setReservas(reservasCliente);
@@ -514,7 +515,8 @@ int Utils::cantidadClientes() {
 	f = fopen(Constantes::getClienteTXT(), "r");
 	if (f == NULL) {
 		printf("No se ha podido abrir el fichero.\n");
-		exit(1);
+		//exit(1);
+		return Constantes::CLIENTES_MAX;
 	}
 	while (!feof(f)) {
 		fgets(temp, 200, f);
@@ -522,59 +524,7 @@ int Utils::cantidadClientes() {
 	}
 	return cont;
 }
-void Utils::actualizarUsuario(int id, int tipoDoc, string nroDoc, string nombres, string apellidos, string direccion, string email, string user, string pwd)
-{
-	char temp[200];
-	string users[5];
-	int i = 0;
-	std::ifstream leer(Constantes::getTaquilleroTXT());
-	while (getline(leer, users[i])) {
-		i++;
-	}
-	string img;
-	switch (id){
-	case 1:
-		img = "raquel.jpg"; break;
-	case 2:
-		img = "arnold.jpg"; break;
-	case 3:
-		img = "melany.jpg"; break;
-	case 4:
-		img = "karen.jpg"; break;
-	case 5:
-		img = "anyela.jpg"; break;
-	}
-	fstream escritura;
-	escritura.open(Constantes::getTaquilleroTXT(), ios::out);
-	for (int i = 0; i < 5; i++) {
-		
-			if (i + 1 != id && i == 0)
-			{
-				escritura << users[i];
-			}
-			else if (i + 1 != id)
-			{
-				escritura <<"\n"<< users[i];
-			}
-			else if(i == 0)
-			{
-				escritura << id << "," << tipoDoc << "," << nroDoc << "," << nombres << "," << apellidos << "," << direccion << "," << email << "," << user << "," << pwd << "," << img;
-			}
-			else
-			{
-				escritura << "\n" << id << "," << tipoDoc << "," << nroDoc << "," << nombres << "," << apellidos << "," << direccion << "," << email << "," << user << "," << pwd << "," << img;
-			}
-		
-		
-	}
-	escritura.close();
-	printf("registro exitoso");
-}
-string Utils::convertToString(char* a, int size)
-{
-	string s(a);
-	return s;
-}
+
 Reserva* Utils::getReservasCliente(Reserva* reservas, int* ids, int tam)
 {
 	Reserva* reservasCliente = (Reserva*)malloc(tam * sizeof(Reserva));
@@ -666,6 +616,73 @@ Taquillero* Utils::getListaTaquillero()
 	}
 	lectura.close();
 	return listaTaquillero;
+}
+
+FuncionDeCine Utils::getFuncionSeleccionada()
+{
+	//Constantes::showMessage("entrando");
+	Pelicula* peliculas = getListaPelicula();
+	FuncionDeCine funcion;
+	ifstream lectura;
+	string linea;
+	lectura.open("funcionGuardada.txt", ios::in);
+	if (!lectura.fail()) {
+		int i, id, idPelicula, idSala;
+		string fechaStr;
+		//Pelicula* p;
+		Fecha f;
+		int count = 0;
+		while (!lectura.eof())
+		{
+			getline(lectura, linea);
+			try
+			{
+				i = linea.find(",");
+				id = atoi(linea.substr(0, i).c_str());
+				funcion.setId(id);
+				//Constantes::showMessage(linea.substr(0, i).c_str());
+
+				linea = linea.substr(i + 1);
+				i = linea.find(",");
+				idPelicula = atoi(linea.substr(0, i).c_str());
+				Pelicula p = getPelicula(peliculas, idPelicula);
+				funcion.setPelicula(p);
+				//Constantes::showMessage(linea.substr(0, i).c_str());
+
+				linea = linea.substr(i + 1);
+				i = linea.find(",");
+				fechaStr = linea.substr(0, i);
+				f = strToFecha(fechaStr.c_str());
+				funcion.setFecha(f);
+				//Constantes::showMessage(fechaStr.c_str());
+
+				linea = linea.substr(i + 1);
+				idSala = atoi(linea.c_str());
+				funcion.setNumeroSala(idSala);
+				//Constantes::showMessage(linea.c_str());
+			}
+			catch (exception e)
+			{
+				string error = "Error: ";
+				error = error + e.what();
+				Constantes::showMessage(error.c_str());
+			}
+			count++;
+		}
+	}
+	lectura.close();
+	return funcion;
+}
+
+void Utils::agregarFuncionGuardada(FuncionDeCine* funcion)
+{
+	char temp[200];
+	fstream escritura;
+	escritura.open("funcionGuardada.txt", ios::app);
+	escritura << "\n";
+	escritura << funcion->getId() << "," << funcion->getPelicula().getId() << "," << "12:08:2020:17:50" << "," << funcion->getNumeroSala();
+	escritura.close();
+	printf("registro exitoso");
 }
 
 FuncionDeCine* Utils::getListaFuncionDeCine(Pelicula* peliculas)
@@ -807,6 +824,23 @@ Reserva* Utils::getListaReservas()
 	return listaReservas;
 }
 
+int Utils::cantidadReservas() {
+	char temp[200];
+	int cont = 0;
+	FILE* f;
+	f = fopen(Constantes::getReservaTXT(), "r");
+	if (f == NULL) {
+		printf("No se ha podido abrir el fichero.\n");
+		//exit(1);
+		return Constantes::RESERVAS_MAX;
+	}
+	while (!feof(f)) {
+		fgets(temp, 200, f);
+		cont++;
+	}
+	return cont;
+}
+
 std::string Utils::getTextBox(System::String^ aux) {
 	string dato;
 	for (int i = 0; i < aux->Length; i++)
@@ -815,4 +849,74 @@ std::string Utils::getTextBox(System::String^ aux) {
 	}
 	cout << dato;
 	return dato;
+}
+
+void Utils::guardarReservaTxt(int fun, int numButacas, std::string butacas, int indiceCli)
+{
+	char temp[200];
+	int cont = 1;
+	FILE* f;
+	f = fopen(Constantes::getReservaTXT(), "r");
+	if (f == NULL) {
+		printf("No se ha podido abrir el fichero.\n");
+		//exit(1);
+	}
+	while (!feof(f)) {
+		fgets(temp, 200, f);
+		cont++;
+	}
+	fstream escritura;
+	escritura.open(Constantes::getReservaTXT(), ios::app);
+	escritura << "\n";
+	escritura << cont << "," << numButacas << "," << butacas;
+	escritura.close();
+	printf("registro exitoso");
+}
+
+void Utils::actualizarUsuario(int id, int tipoDoc, string nroDoc, string nombres, string apellidos, string direccion, string email, string user, string pwd)
+{
+	char temp[200];
+	FILE* f;
+	string users[5];
+	f = fopen(Constantes::getTaquilleroTXT(), "r");
+	if (f == NULL) {
+		printf("No se ha podido abrir el fichero.\n");
+		exit(1);
+	}
+	int i = 0;
+	while (!feof(f)) {
+		fgets(temp, 400, f);
+		users[i] = convertToString(temp, 400);
+	}
+	string img;
+	switch (id){
+	case 1:
+		img = "raquel.jpg"; break;
+	case 2:
+		img = "arnold.jpg"; break;
+	case 3:
+		img = "melany.jpg"; break;
+	case 4:
+		img = "karen.jpg"; break;
+	case 5:
+		img = "anyela.jpg"; break;
+	}
+	fstream escritura;
+	escritura.open(Constantes::getTaquilleroTXT(), ios::trunc);
+	for (int i = 0; i < 5; i++) {
+		if (i + 1 != id)
+		{
+			escritura <<"\n"<< users[i];
+		}
+		else
+		{
+			escritura <<"\n"<< id << "," << tipoDoc << "," << nroDoc << "," << nombres << "," << apellidos << "," << direccion << "," << email << "," << user << "," << pwd << "," << img;
+		}
+	}
+	printf("registro exitoso");
+}
+string Utils::convertToString(char* a, int size)
+{
+	string s(a);
+	return s;
 }
