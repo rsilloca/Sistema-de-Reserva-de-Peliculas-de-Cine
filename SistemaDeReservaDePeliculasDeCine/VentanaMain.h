@@ -2175,9 +2175,9 @@ private: System::Void btnGuardarCambios_Click(System::Object^ sender, System::Ev
 	std::string direccion = util.getTextBox(direccionAux);
 	String^ emailAux = textBox8->Text;
 	std::string email = util.getTextBox(emailAux);
-	String^ userAux = textBox8->Text;
+	String^ userAux = textBox9->Text;
 	std::string user = util.getTextBox(userAux);
-	String^ pwdAux = textBox9->Text;
+	String^ pwdAux = textBox10->Text;
 	std::string pwd = util.getTextBox(pwdAux);
 
 	util.actualizarUsuario(this->usuario->getId(), tipoDoc, nroDoc, nombres, apellidos, direccion, email, user, pwd);
